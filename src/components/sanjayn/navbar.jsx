@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import NImage from '../../assert/N-sticker.png'; // Corrected path to match folder name 'assert'
-
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,17 +81,12 @@ const Navbar = () => {
                   src={NImage}
                   alt="N Sticker"
                   className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-lg filter brightness-110" // Size scaled to match increased text; adjust as needed
-                  style={{
-                    filter: 'drop-shadow(0 0 8px #0ea5e9) drop-shadow(0 0 16px #0ea5e9)', // Blue glow effect using cyan-blue color
-                  }}
                 />
-                {/* Glow effect behind N image */}
-                <span className="absolute inset-0 -z-10 blur-xl bg-gradient-to-r from-glow-blue/50 to-glow-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150" />
               </span>
             </div>
             {/* Glow effect behind entire logo */}
             <span className="absolute inset-0 -z-10 blur-xl bg-gradient-to-r from-glow-cyan/30 via-glow-blue/20 to-glow-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150" />
-           
+          
             {/* Floating stars around */}
             <span className="absolute -top-2 -right-3 text-glow-cyan text-sm animate-twinkle">✦</span>
             <span className="absolute -bottom-1 -left-2 text-glow-blue text-xs animate-twinkle" style={{ animationDelay: '0.5s' }}>✧</span>
@@ -104,7 +98,7 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`relative px-4 py-2 text-base font-medium transition-all duration-300 rounded-lg ${
+                className={`relative px-4 py-2 text-lg font-bold transition-all duration-300 rounded-lg ${
                   activeSection === link.id
                     ? 'text-glow-cyan'
                     : 'text-silver-secondary hover:text-silver-primary'
@@ -158,7 +152,7 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+              className={`block w-full text-left px-4 py-3 rounded-lg text-lg font-bold transition-all duration-300 ${
                 activeSection === link.id
                   ? 'text-glow-cyan bg-space-card'
                   : 'text-silver-secondary hover:text-silver-primary hover:bg-space-card/50'
