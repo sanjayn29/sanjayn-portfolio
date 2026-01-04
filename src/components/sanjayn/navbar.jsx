@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
+import NImage from '../../assert/N-sticker.png'; // Corrected path to match folder name 'assert'
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const navLinks = [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -15,14 +15,11 @@ const Navbar = () => {
     { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' },
   ];
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
       const sections = navLinks.map(link => document.getElementById(link.id));
       const scrollPosition = window.scrollY + 100;
-
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && section.offsetTop <= scrollPosition) {
@@ -31,11 +28,9 @@ const Navbar = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -43,7 +38,6 @@ const Navbar = () => {
     }
     setIsMobileMenuOpen(false);
   };
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -57,7 +51,7 @@ const Navbar = () => {
           {/* Animated Logo with Character */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="group relative text-2xl md:text-3xl font-display font-bold"
+            className="group relative text-3xl md:text-4xl font-display font-bold" // Increased size from text-2xl md:text-3xl
           >
             <div className="relative flex items-end">
               {/* S with Hat */}
@@ -78,46 +72,32 @@ const Navbar = () => {
                 </span>
                 <span className="text-glow-cyan group-hover:animate-bounce-subtle">S</span>
               </span>
-
-              {/* anjay */}
-              <span className="bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer">
-                anjay
-              </span>
-
+              {/* ANJAY */}
+              <span className="bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer uppercase tracking-wide">ANJAY</span> {/* Made uppercase and added tracking-wide for better spacing */}
               {/* Space */}
               <span className="w-2" />
-
-              {/* N with Eyes */}
-              <span className="relative inline-block">
-                <span className="text-glow-blue group-hover:animate-bounce-subtle" style={{ animationDelay: '0.1s' }}>N</span>
-                {/* Eyes on N */}
-                <span className="absolute top-[2px] left-1/2 -translate-x-1/2 flex gap-[6px] pointer-events-none">
-                  {/* Left eye */}
-                  <span className="relative w-[6px] h-[6px] bg-white rounded-full overflow-hidden shadow-lg">
-                    <span className="absolute w-[3px] h-[3px] bg-space-deep rounded-full animate-look-around" />
-                  </span>
-                  {/* Right eye */}
-                  <span className="relative w-[6px] h-[6px] bg-white rounded-full overflow-hidden shadow-lg">
-                    <span className="absolute w-[3px] h-[3px] bg-space-deep rounded-full animate-look-around" style={{ animationDelay: '0.1s' }} />
-                  </span>
-                </span>
-                {/* Blink effect on hover */}
-                <span className="absolute top-[2px] left-1/2 -translate-x-1/2 flex gap-[6px] opacity-0 group-hover:animate-blink pointer-events-none">
-                  <span className="w-[6px] h-[2px] bg-glow-cyan rounded-full" />
-                  <span className="w-[6px] h-[2px] bg-glow-cyan rounded-full" />
-                </span>
+              {/* N Image with Blue Effect */}
+              <span className="relative inline-block group-hover:animate-bounce-subtle" style={{ animationDelay: '0.1s' }}>
+                <img
+                  src={NImage}
+                  alt="N Sticker"
+                  className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-lg filter brightness-110" // Size scaled to match increased text; adjust as needed
+                  style={{
+                    filter: 'drop-shadow(0 0 8px #0ea5e9) drop-shadow(0 0 16px #0ea5e9)', // Blue glow effect using cyan-blue color
+                  }}
+                />
+                {/* Glow effect behind N image */}
+                <span className="absolute inset-0 -z-10 blur-xl bg-gradient-to-r from-glow-blue/50 to-glow-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150" />
               </span>
             </div>
-
-            {/* Glow effect behind */}
+            {/* Glow effect behind entire logo */}
             <span className="absolute inset-0 -z-10 blur-xl bg-gradient-to-r from-glow-cyan/30 via-glow-blue/20 to-glow-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150" />
-            
+           
             {/* Floating stars around */}
             <span className="absolute -top-2 -right-3 text-glow-cyan text-sm animate-twinkle">✦</span>
             <span className="absolute -bottom-1 -left-2 text-glow-blue text-xs animate-twinkle" style={{ animationDelay: '0.5s' }}>✧</span>
             <span className="absolute top-0 right-1/3 text-silver-metallic text-[8px] animate-twinkle" style={{ animationDelay: '1s' }}>•</span>
           </button>
-
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
@@ -137,7 +117,6 @@ const Navbar = () => {
               </button>
             ))}
           </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -168,7 +147,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <div
         className={`lg:hidden transition-all duration-300 overflow-hidden ${
@@ -194,5 +172,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
