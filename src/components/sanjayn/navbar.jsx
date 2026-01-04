@@ -54,11 +54,24 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Animated Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl md:text-2xl font-display font-semibold text-silver-metallic hover:text-foreground transition-colors duration-300"
+            className="group relative text-2xl md:text-3xl font-display font-bold"
           >
-            Sanjay N
+            <span className="relative inline-block">
+              {/* Glow background */}
+              <span className="absolute inset-0 blur-lg bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-cyan opacity-50 group-hover:opacity-80 transition-opacity duration-500 animate-pulse" />
+              
+              {/* Main text with gradient */}
+              <span className="relative bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer">
+                Sanjay N
+              </span>
+            </span>
+            
+            {/* Sparkle decorations */}
+            <span className="absolute -top-1 -right-2 text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-1">✦</span>
+            <span className="absolute -bottom-1 -left-1 text-xs text-glow-cyan opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:translate-y-1">✧</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -67,7 +80,7 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                className={`relative px-4 py-2 text-base font-medium transition-all duration-300 rounded-lg ${
                   activeSection === link.id
                     ? 'text-glow-cyan'
                     : 'text-silver-secondary hover:text-silver-primary'
@@ -123,7 +136,7 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                 activeSection === link.id
                   ? 'text-glow-cyan bg-space-card'
                   : 'text-silver-secondary hover:text-silver-primary hover:bg-space-card/50'
