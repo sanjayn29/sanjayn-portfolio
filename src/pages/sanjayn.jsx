@@ -9,10 +9,12 @@ import Certifications from '../components/sanjayn/certifications';
 import Contact from '../components/sanjayn/contact';
 import Footer from '../components/sanjayn/footer';
 import SpaceBackground from '../components/sanjayn/SpaceBackground';
+import StarCursor from '../components/sanjayn/StarCursor';
 
 const SanjayN = () => {
   return (
     <div className="min-h-screen bg-space-deep relative">
+      <StarCursor />
       <SpaceBackground />
       <Navbar />
       <main className="relative z-10">
