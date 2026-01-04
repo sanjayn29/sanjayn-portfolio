@@ -54,24 +54,68 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Animated Logo */}
+          {/* Animated Logo with Character */}
           <button
             onClick={() => scrollToSection('hero')}
             className="group relative text-2xl md:text-3xl font-display font-bold"
           >
-            <span className="relative inline-block">
-              {/* Glow background */}
-              <span className="absolute inset-0 blur-lg bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-cyan opacity-50 group-hover:opacity-80 transition-opacity duration-500 animate-pulse" />
-              
-              {/* Main text with gradient */}
-              <span className="relative bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer">
-                Sanjay N
+            <div className="relative flex items-end">
+              {/* S with Hat */}
+              <span className="relative inline-block">
+                {/* Top Hat */}
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:-translate-y-1 group-hover:rotate-[-10deg]">
+                  <svg width="20" height="16" viewBox="0 0 20 16" className="drop-shadow-lg">
+                    {/* Hat brim */}
+                    <ellipse cx="10" cy="14" rx="10" ry="2" fill="#22D3EE" />
+                    {/* Hat top */}
+                    <rect x="4" y="4" width="12" height="10" rx="1" fill="#0891B2" />
+                    <rect x="4" y="4" width="12" height="3" rx="1" fill="#22D3EE" />
+                    {/* Hat band */}
+                    <rect x="4" y="10" width="12" height="2" fill="#60A5FA" />
+                    {/* Shine */}
+                    <rect x="6" y="5" width="2" height="4" rx="1" fill="white" opacity="0.3" />
+                  </svg>
+                </span>
+                <span className="text-glow-cyan group-hover:animate-bounce-subtle">S</span>
               </span>
-            </span>
+
+              {/* anjay */}
+              <span className="bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer">
+                anjay
+              </span>
+
+              {/* Space */}
+              <span className="w-2" />
+
+              {/* N with Eyes */}
+              <span className="relative inline-block">
+                <span className="text-glow-blue group-hover:animate-bounce-subtle" style={{ animationDelay: '0.1s' }}>N</span>
+                {/* Eyes on N */}
+                <span className="absolute top-[2px] left-1/2 -translate-x-1/2 flex gap-[6px] pointer-events-none">
+                  {/* Left eye */}
+                  <span className="relative w-[6px] h-[6px] bg-white rounded-full overflow-hidden shadow-lg">
+                    <span className="absolute w-[3px] h-[3px] bg-space-deep rounded-full animate-look-around" />
+                  </span>
+                  {/* Right eye */}
+                  <span className="relative w-[6px] h-[6px] bg-white rounded-full overflow-hidden shadow-lg">
+                    <span className="absolute w-[3px] h-[3px] bg-space-deep rounded-full animate-look-around" style={{ animationDelay: '0.1s' }} />
+                  </span>
+                </span>
+                {/* Blink effect on hover */}
+                <span className="absolute top-[2px] left-1/2 -translate-x-1/2 flex gap-[6px] opacity-0 group-hover:animate-blink pointer-events-none">
+                  <span className="w-[6px] h-[2px] bg-glow-cyan rounded-full" />
+                  <span className="w-[6px] h-[2px] bg-glow-cyan rounded-full" />
+                </span>
+              </span>
+            </div>
+
+            {/* Glow effect behind */}
+            <span className="absolute inset-0 -z-10 blur-xl bg-gradient-to-r from-glow-cyan/30 via-glow-blue/20 to-glow-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150" />
             
-            {/* Sparkle decorations */}
-            <span className="absolute -top-1 -right-2 text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-1">✦</span>
-            <span className="absolute -bottom-1 -left-1 text-xs text-glow-cyan opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:translate-y-1">✧</span>
+            {/* Floating stars around */}
+            <span className="absolute -top-2 -right-3 text-glow-cyan text-sm animate-twinkle">✦</span>
+            <span className="absolute -bottom-1 -left-2 text-glow-blue text-xs animate-twinkle" style={{ animationDelay: '0.5s' }}>✧</span>
+            <span className="absolute top-0 right-1/3 text-silver-metallic text-[8px] animate-twinkle" style={{ animationDelay: '1s' }}>•</span>
           </button>
 
           {/* Desktop Navigation */}
