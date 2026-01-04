@@ -102,25 +102,59 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom Scrollbar - Blue Theme */
+  /* Rocket Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--space-deep));
-    border-radius: 5px;
+    background: linear-gradient(180deg, 
+      hsl(var(--space-deep)) 0%,
+      hsl(220 70% 8%) 50%,
+      hsl(var(--space-deep)) 100%
+    );
+    border-left: 1px solid hsl(var(--border));
+    box-shadow: inset 0 0 10px hsl(var(--glow-blue) / 0.1);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, hsl(var(--glow-blue)), hsl(var(--glow-cyan)));
-    border-radius: 5px;
+    background: 
+      linear-gradient(180deg, 
+        hsl(var(--glow-cyan)) 0%,
+        hsl(var(--glow-blue)) 30%,
+        hsl(217 80% 50%) 60%,
+        hsl(var(--glow-cyan)) 100%
+      );
+    border-radius: 8px;
     border: 2px solid hsl(var(--space-deep));
+    box-shadow: 
+      0 0 10px hsl(var(--glow-cyan) / 0.5),
+      0 0 20px hsl(var(--glow-blue) / 0.3),
+      inset 0 0 5px hsl(255 100% 100% / 0.3);
+    position: relative;
+  }
+
+  ::-webkit-scrollbar-thumb::before {
+    content: '🚀';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, hsl(var(--glow-cyan)), hsl(var(--glow-blue)));
+    background: 
+      linear-gradient(180deg, 
+        hsl(var(--glow-cyan)) 0%,
+        hsl(189 90% 60%) 30%,
+        hsl(var(--glow-blue)) 70%,
+        hsl(var(--glow-cyan)) 100%
+      );
+    box-shadow: 
+      0 0 15px hsl(var(--glow-cyan) / 0.7),
+      0 0 30px hsl(var(--glow-blue) / 0.5),
+      inset 0 0 8px hsl(255 100% 100% / 0.4);
   }
 
   ::-webkit-scrollbar-corner {
@@ -130,7 +164,16 @@
   /* Firefox Scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: hsl(var(--glow-blue)) hsl(var(--space-deep));
+    scrollbar-color: hsl(var(--glow-cyan)) hsl(var(--space-deep));
+  }
+
+  /* Star Cursor */
+  body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%2322D3EE'%3E%3Cpath d='M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z'/%3E%3C/svg%3E") 12 12, auto;
+  }
+
+  a, button, [role="button"], input, textarea, select, [tabindex]:not([tabindex="-1"]) {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%2360A5FA'%3E%3Cpath d='M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z'/%3E%3C/svg%3E") 14 14, pointer;
   }
 }
 
