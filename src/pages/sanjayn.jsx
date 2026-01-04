@@ -8,12 +8,14 @@ import Achievements from '../components/sanjayn/achievements';
 import Certifications from '../components/sanjayn/certifications';
 import Contact from '../components/sanjayn/contact';
 import Footer from '../components/sanjayn/footer';
+import SpaceBackground from '../components/sanjayn/SpaceBackground';
 
 const SanjayN = () => {
   return (
-    <div className="min-h-screen bg-space-deep">
+    <div className="min-h-screen bg-space-deep relative">
+      <SpaceBackground />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
