@@ -268,6 +268,11 @@
   .animate-delay-300 { animation-delay: 300ms; }
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
+
+  /* Shimmer animation for text */
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
 }
 
 @layer utilities {
@@ -398,5 +403,14 @@
   100% {
     transform: translateX(300px) translateY(300px);
     opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
   }
 }
