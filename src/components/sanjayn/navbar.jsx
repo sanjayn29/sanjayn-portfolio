@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import NImage from '../../assert/N-sticker.png'; // Corrected path to match folder name 'assert'
+import resumePDF from '../../assert/23ALR087-Sanjay N.pdf'; // Import the PDF for download
+
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,6 +15,17 @@ const Navbar = () => {
     { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' },
   ];
+
+  // Function to trigger PDF download
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = resumePDF;
+    link.download = '23ALR087-Sanjay N.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -30,6 +42,7 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -37,6 +50,7 @@ const Navbar = () => {
     }
     setIsMobileMenuOpen(false);
   };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -71,28 +85,21 @@ const Navbar = () => {
                 </span>
                 <span className="text-glow-cyan group-hover:animate-bounce-subtle">S</span>
               </span>
-              {/* ANJAY */}
-              <span className="bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer uppercase tracking-wide">ANJAY</span> {/* Made uppercase and added tracking-wide for better spacing */}
+              {/* SANJAY */}
+              <span className="bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent uppercase tracking-wide">ANJAY</span>
               {/* Space */}
               <span className="w-2" />
-              {/* N Image with Blue Effect */}
+              {/* N Text with Blue Effect */}
               <span className="relative inline-block group-hover:animate-bounce-subtle" style={{ animationDelay: '0.1s' }}>
-                <img
-                  src={NImage}
-                  alt="N Sticker"
-                  className="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-lg filter brightness-110" // Size scaled to match increased text; adjust as needed
-                />
+                <span className="bg-gradient-to-r from-glow-cyan via-silver-metallic to-glow-blue bg-[length:200%_auto] bg-clip-text text-transparent uppercase tracking-wide">N</span>
               </span>
             </div>
             {/* Glow effect behind entire logo */}
             <span className="absolute inset-0 -z-10 blur-xl bg-gradient-to-r from-glow-cyan/30 via-glow-blue/20 to-glow-cyan/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150" />
           
-            {/* Floating stars around */}
-            <span className="absolute -top-2 -right-3 text-glow-cyan text-sm animate-twinkle">✦</span>
-            <span className="absolute -bottom-1 -left-2 text-glow-blue text-xs animate-twinkle" style={{ animationDelay: '0.5s' }}>✧</span>
-            <span className="absolute top-0 right-1/3 text-silver-metallic text-[8px] animate-twinkle" style={{ animationDelay: '1s' }}>•</span>
           </button>
-          {/* Desktop Navigation */}
+
+          {/* Desktop Navigation with Resume Button */}
           <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
               <button
@@ -110,7 +117,18 @@ const Navbar = () => {
                 )}
               </button>
             ))}
+            {/* Resume Download Button */}
+            <button
+              onClick={downloadResume}
+              className="relative px-4 py-2 text-lg font-bold transition-all duration-300 rounded-lg text-silver-secondary hover:text-glow-cyan hover:bg-space-card/50"
+            >
+              <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Resume
+            </button>
           </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -141,7 +159,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      {/* Mobile Menu */}
+      {/* Mobile Menu with Resume Button */}
       <div
         className={`lg:hidden transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
@@ -161,9 +179,20 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
+          {/* Mobile Resume Download Button */}
+          <button
+            onClick={downloadResume}
+            className="block w-full text-left px-4 py-3 rounded-lg text-lg font-bold transition-all duration-300 text-silver-secondary hover:text-glow-cyan hover:bg-space-card/50"
+          >
+            <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Resume
+          </button>
         </div>
       </div>
     </nav>
   );
 };
+
 export default Navbar;
