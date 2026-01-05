@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* Animated Logo with Character */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="group relative text-3xl md:text-4xl font-display font-bold" // Increased size from text-2xl md:text-3xl
+            className="group relative text-2xl md:text-3xl font-display font-bold lg:mr-8" // Added lg:mr-8 for increased gap
           >
             <div className="relative flex items-end">
               {/* S with Hat */}
@@ -99,8 +99,11 @@ const Navbar = () => {
           
           </button>
 
+          {/* Spacer for additional space on desktop */}
+          <div className="hidden lg:block flex-1" />
+
           {/* Desktop Navigation with Resume Button */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-0.5"> {/* Reduced from space-x-1 */}
             {navLinks.map((link) => (
               <button
                 key={link.id}
