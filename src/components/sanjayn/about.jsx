@@ -1,4 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import SanjayImage from '../../assert/Sanjay N.jpg';
+import { FaPhone } from 'react-icons/fa';
+import { MdLocationOn, MdEmail } from 'react-icons/md';
+import { SiLeetcode, SiGithub, SiLinkedin } from 'react-icons/si';
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -21,60 +25,92 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="about" ref={sectionRef} className="relative py-24 md:py-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" ref={sectionRef} className="relative py-16 md:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
             About Me
           </h2>
           <div className="section-divider max-w-xs mx-auto" />
         </div>
 
-        {/* Content */}
-        <div className={`space-y-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-silver-secondary text-lg md:text-xl leading-relaxed">
-            I am a passionate technologist dedicated to pushing the boundaries of what's possible 
-            with artificial intelligence and machine learning. With a deep understanding of both 
-            theoretical foundations and practical applications, I build systems that bridge the 
-            gap between complex algorithms and real-world impact.
-          </p>
-
-          <p className="text-silver-muted text-base md:text-lg leading-relaxed">
-            My journey in technology began with a curiosity about how machines can learn and 
-            adapt. This curiosity has evolved into expertise across the full stack of AI/ML 
-            development—from designing neural network architectures to deploying scalable 
-            production systems. I believe in writing clean, maintainable code that stands 
-            the test of time.
-          </p>
-
-          <p className="text-silver-muted text-base md:text-lg leading-relaxed">
-            When I'm not coding, you'll find me exploring the latest research papers, 
-            contributing to open-source projects, or mentoring the next generation of 
-            developers. I'm driven by the belief that technology should be accessible, 
-            ethical, and transformative.
-          </p>
-        </div>
-
-        {/* Stats */}
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {[
-            { value: '5+', label: 'Years Experience' },
-            { value: '50+', label: 'Projects Completed' },
-            { value: '20+', label: 'Technologies' },
-            { value: '10+', label: 'Certifications' },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-xl bg-space-card/50 border border-border/30"
-            >
-              <div className="font-display text-3xl md:text-4xl font-bold text-glow-cyan mb-2">
-                {stat.value}
-              </div>
-              <div className="text-silver-muted text-sm">{stat.label}</div>
+        {/* Content Layout */}
+        <div className={`grid lg:grid-cols-2 gap-1 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* Left: Image */}
+          <div className="relative flex justify-center lg:justify-start">
+            <div className="relative">
+              <img
+                src={SanjayImage}
+                alt="Sanjay N"
+                className="w-full h-auto max-w-sm rounded-2xl shadow-2xl border-4 border-glow-cyan/20 object-contain"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Right: Content */}
+          <div className="space-y-6 text-left">
+            <p className="text-silver-secondary text-xl md:text-2xl leading-relaxed">
+              A B.Tech Artificial Intelligence And Machine Learning student and also a freelancer
+            </p>
+
+            <p className="text-silver-secondary text-xl md:text-2xl leading-relaxed">
+              To solve real-world problems by building practical software and intelligent solutions, while continuously learning and applying new ideas to create meaningful impact.
+            </p>
+
+            {/* Contact Info */}
+            <div className="space-y-3 pt-4 border-t border-border/30">
+              <div className="flex items-center gap-3 text-silver-secondary text-base md:text-lg">
+                <FaPhone className="text-glow-cyan text-2xl" />
+                <span>Phone: 9080581688</span>
+              </div>
+              <div className="flex items-center gap-3 text-silver-secondary text-base md:text-lg">
+                <MdEmail className="text-glow-cyan text-2xl" />
+                <span>Email: sanjaynavaneethamurali@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-silver-secondary text-base md:text-lg">
+                <MdLocationOn className="text-glow-cyan text-2xl" />
+                <span>Location: Vellore, Tamil Nadu</span>
+              </div>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 pt-4">
+              <a
+                href="https://www.linkedin.com/in/sanjayn29"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-3 rounded-xl bg-space-card/50 border border-border/30 hover:bg-glow-cyan/10 transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <SiLinkedin className="w-8 h-8 text-silver-secondary group-hover:text-glow-cyan transition-colors" />
+              </a>
+              <a
+                href="https://github.com/sanjayn29"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-3 rounded-xl bg-space-card/50 border border-border/30 hover:bg-glow-cyan/10 transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <SiGithub className="w-8 h-8 text-silver-secondary group-hover:text-glow-cyan transition-colors" />
+              </a>
+              <a
+                href="https://leetcode.com/sanjayn29/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-3 rounded-xl bg-space-card/50 border border-border/30 hover:bg-glow-cyan/10 transition-all duration-300"
+                aria-label="LeetCode"
+              >
+                <SiLeetcode className="w-8 h-8 text-silver-secondary group-hover:text-glow-cyan transition-colors" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
