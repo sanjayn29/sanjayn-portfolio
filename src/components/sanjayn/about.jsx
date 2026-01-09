@@ -65,31 +65,30 @@ const About = () => {
             {/* Introduction Text - Tighter spacing */}
             <div className="space-y-4">
               <p className="text-silver-secondary text-base md:text-lg leading-relaxed">
-                B.Tech student in Artificial Intelligence and Machine Learning, passionate about solving real-world problems through innovative software and intelligent systems.
-              </p>
+I am passionate about solving real-world problems through practical software and intelligent solutions, always learning and applying new ideas to make a meaningful impact.              </p>
               <p className="text-silver-secondary text-base md:text-lg leading-relaxed">
-                Focused on creating impactful solutions that bridge the gap between theoretical concepts and practical applications in the tech industry.
+Currently pursuing B.Tech in Artificial Intelligence & Machine Learning at Kongu Engineering College, Erode.
                 <span className="text-glow-cyan font-medium"> Let's connect and collaborate!</span>
               </p>
             </div>
 
             {/* Contact Info - Compact spacing */}
             <div className="space-y-3 pt-4 border-t border-border/30">
-              <div className="flex items-center gap-3 text-silver-secondary text-sm md:text-base group hover:bg-space-card/30 p-2.5 rounded-lg transition-all duration-300 cursor-pointer">
+              <div className="flex items-center gap-3 text-silver-secondary text-lg md:text-base group hover:bg-space-card/30 p-2.5 rounded-lg transition-all duration-300 cursor-pointer">
                 <div className="p-2 rounded-md bg-glow-cyan/10 group-hover:bg-glow-cyan/20 transition-colors">
                   <FaPhone className="text-glow-cyan text-lg" />
                 </div>
                 <span className="group-hover:text-glow-cyan transition-colors">+91 90805 81688</span>
               </div>
               
-              <div className="flex items-center gap-3 text-silver-secondary text-sm md:text-base group hover:bg-space-card/30 p-2.5 rounded-lg transition-all duration-300 cursor-pointer">
+              <div className="flex items-center gap-3 text-silver-secondary text-lg md:text-base group hover:bg-space-card/30 p-2.5 rounded-lg transition-all duration-300 cursor-pointer">
                 <div className="p-2 rounded-md bg-glow-cyan/10 group-hover:bg-glow-cyan/20 transition-colors">
                   <MdEmail className="text-glow-cyan text-lg" />
                 </div>
-                <span className="group-hover:text-glow-cyan transition-colors text-sm break-words">sanjaynavaneethamurali@gmail.com</span>
+                <span className="group-hover:text-glow-cyan transition-colors text-sm break-words">sanjayn29.aiml@gmail.com</span>
               </div>
               
-              <div className="flex items-center gap-3 text-silver-secondary text-sm md:text-base group hover:bg-space-card/30 p-2.5 rounded-lg transition-all duration-300 cursor-pointer">
+              <div className="flex items-center gap-3 text-silver-secondary text-lg md:text-base group hover:bg-space-card/30 p-2.5 rounded-lg transition-all duration-300 cursor-pointer">
                 <div className="p-2 rounded-md bg-glow-cyan/10 group-hover:bg-glow-cyan/20 transition-colors">
                   <MdLocationOn className="text-glow-cyan text-lg" />
                 </div>
