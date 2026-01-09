@@ -26,7 +26,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-12 md:py-16">
+    <section id="about" ref={sectionRef} className="relative pt-20 md:pt-24 pb-12 md:pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className={`text-center mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
