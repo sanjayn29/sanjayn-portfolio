@@ -130,7 +130,7 @@ const Hero = () => {
         {/* LEFT: Text */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           {/* Greeting */}
-          <p className="animate-fade-up text-silver-secondary text-sm md:text-base tracking-widest uppercase mb-6">
+          <p className="animate-fade-up text-glow-cyan text-lg md:text-base tracking-widest uppercase mb-6">
             Welcome to my universe
           </p>
 
