@@ -22,33 +22,30 @@ const Experience = () => {
   }, []);
 
   const experiences = [
+    
     {
-      title: 'Senior AI Engineer',
-      company: 'TechCorp AI Solutions',
-      period: '2022 - Present',
-      description: 'Leading the development of enterprise-scale ML platforms. Architecting and deploying production-grade AI systems serving millions of users. Mentoring junior engineers and establishing best practices for MLOps.',
-      highlights: ['Led team of 8 engineers', 'Reduced inference latency by 60%', 'Deployed 15+ production models'],
+      title: 'Software Developer',
+      company: 'Outliers United (Freelance)',
+      url: 'https://www.outliersunited.com',
+      period: 'Mar 2025 - Present',
+      description: 'Developed real-world web and e-commerce applications and incubation organizations. Delivered production-ready solutions by understanding client requirements and implementing reliable systems.',
+      highlights: ['Developed web and e-commerce apps and incubation orgs', 'Delivered production-ready solutions'],
     },
     {
-      title: 'Machine Learning Engineer',
-      company: 'DataDriven Inc.',
-      period: '2020 - 2022',
-      description: 'Developed computer vision models for autonomous systems. Built end-to-end ML pipelines from data collection to deployment. Collaborated with cross-functional teams to integrate AI capabilities into products.',
-      highlights: ['Improved model accuracy by 25%', 'Built real-time inference system', 'Published 3 research papers'],
+      title: 'Software Developer & Machine Learning Engineer',
+      company: 'Neovate (Freelance)',
+      url: 'https://www.neovateai.tech',
+      period: 'May 2025 - Present',
+      description: 'Developing a multipurpose application for medical portfolio management, integrating software development and machine learning to build practical, user-focused solutions.',
+      highlights: ['Architected multipurpose medical app', 'Delivered end-to-end freelance project'],
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Innovation Labs',
-      period: '2019 - 2020',
-      description: 'Built scalable web applications using modern frameworks. Implemented RESTful APIs and microservices architecture. Contributed to the development of internal tools and developer experience.',
-      highlights: ['Developed 10+ web applications', 'Migrated legacy systems to cloud', 'Improved CI/CD pipeline efficiency'],
-    },
-    {
-      title: 'Software Engineering Intern',
-      company: 'StartupXYZ',
-      period: '2018 - 2019',
-      description: 'Gained foundational experience in software development practices. Worked on frontend and backend features. Participated in agile development processes and code reviews.',
-      highlights: ['Contributed to core product features', 'Learned industry best practices', 'Received full-time offer'],
+      title: 'AI Agentic Intern',
+      company: 'Cubeaisolutions Tech Pvt Ltd',
+      url: 'https://www.cubeaisolutions.com',
+      period: 'Jul 2025 - Oct 2025',
+      description: 'Built AI models for medical symptom analysis and sentiment classification, Gained hands-on experience in building practical, user-focused AI solutions.',
+      highlights: ['Addressed real-world problem statements', 'Gained hands-on experience in practical AI solutions'],
     },
   ];
 
@@ -56,12 +53,15 @@ const Experience = () => {
     <section id="experience" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
-            Experience
-          </h2>
-          <div className="section-divider max-w-xs mx-auto" />
-        </div>
+<div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
+    Professional <span className="text-glow-cyan">Experience</span>
+  </h2>
+  <div className="section-divider max-w-xs mx-auto" />
+  <p className="text-silver-secondary text-lg md:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+    Explore my journey through impactful roles and projects across software development and AI.
+  </p>
+</div>
 
         {/* Timeline */}
         <div className="relative">
@@ -90,7 +90,16 @@ const Experience = () => {
                         {exp.period}
                       </span>
                     </div>
-                    <p className="text-silver-metallic font-medium mb-3">{exp.company}</p>
+                    <p className="mb-3">
+                      <a
+                        href={exp.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-silver-metallic font-medium hover:text-glow-cyan transition-colors duration-300"
+                      >
+                        {exp.company}
+                      </a>
+                    </p>
                     <p className="text-silver-muted text-sm leading-relaxed mb-4">
                       {exp.description}
                     </p>
