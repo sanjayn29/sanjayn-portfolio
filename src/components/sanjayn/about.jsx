@@ -68,15 +68,15 @@ const About = () => {
             <div className="space-y-3 pt-4 border-t border-border/30">
               <div className="flex items-center gap-3 text-silver-secondary text-base md:text-lg">
                 <FaPhone className="text-glow-cyan text-2xl" />
-                <span>Phone: 9080581688</span>
+                <span>Phone : 9080581688</span>
               </div>
               <div className="flex items-center gap-3 text-silver-secondary text-base md:text-lg">
                 <MdEmail className="text-glow-cyan text-2xl" />
-                <span>Email: sanjaynavaneethamurali@gmail.com</span>
+                <span>Email : sanjaynavaneethamurali@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-silver-secondary text-base md:text-lg">
                 <MdLocationOn className="text-glow-cyan text-2xl" />
-                <span>Location: Vellore, Tamil Nadu</span>
+                <span>Location : Vellore, Tamil Nadu</span>
               </div>
             </div>
 
