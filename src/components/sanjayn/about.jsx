@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import SanjayImage from '../../assert/Sanjay N.jpg';
+import SanjayImage from '../../assert/img3.jpg';
 import { FaPhone } from 'react-icons/fa';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import { SiLeetcode, SiGithub, SiLinkedin } from 'react-icons/si';
@@ -34,12 +34,16 @@ const About = () => {
     <section id="about" ref={sectionRef} className="relative py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
-            About Me
-          </h2>
-          <div className="section-divider max-w-xs mx-auto" />
-        </div>
+<div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
+    About <span className="text-glow-cyan">Me</span>
+  </h2>
+  <div className="section-divider max-w-xs mx-auto" />
+  <p className="text-silver-secondary text-lg md:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+    A B.Tech student in Artificial Intelligence and Machine Learning, passionate about solving real-world problems through innovative software and intelligent systems.
+    <span className="text-glow-cyan font-medium"> Let's connect and collaborate</span>
+  </p>
+</div>
 
         {/* Content Layout */}
         <div className={`grid lg:grid-cols-2 gap-1 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -56,13 +60,7 @@ const About = () => {
 
           {/* Right: Content */}
           <div className="space-y-6 text-left">
-            <p className="text-silver-secondary text-xl md:text-2xl leading-relaxed">
-              A B.Tech Artificial Intelligence And Machine Learning student and also a freelancer
-            </p>
-
-            <p className="text-silver-secondary text-xl md:text-2xl leading-relaxed">
-              To solve real-world problems by building practical software and intelligent solutions, while continuously learning and applying new ideas to create meaningful impact.
-            </p>
+            
 
             {/* Contact Info */}
             <div className="space-y-3 pt-4 border-t border-border/30">
