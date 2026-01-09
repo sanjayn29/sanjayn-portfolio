@@ -166,7 +166,7 @@ const Hero = () => {
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 text-silver-secondary hover:text-silver-primary border border-border/50 rounded-xl transition-all duration-300 hover:border-silver-muted flex items-center gap-2"
+              className="group relative px-8 py-4 bg-space-card border border-glow-cyan/30 rounded-xl text-silver-primary font-medium transition-all duration-500 hover-glow-cyan hover:border-glow-cyan/60 flex items-center gap-2"
             >
               Get In Touch
             </button>
