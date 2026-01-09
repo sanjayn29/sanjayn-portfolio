@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
-import { Code, Cpu, Database, Smartphone, Zap, Brain, GitBranch, CheckCircle } from 'lucide-react';
+import { Code, Cpu, Database, Smartphone, Zap, GitBranch, CheckCircle } from 'lucide-react';
 
 const Skills = () => {
   const sectionRef = useRef(null);
@@ -44,7 +44,7 @@ const Skills = () => {
     { name: 'MongoDB', category: 'database', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
     { name: 'PostgreSQL', category: 'database', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
     { name: 'Firebase', category: 'database', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-  // Machine Learning and Deep Learning Frameworks
+    // Machine Learning and Deep Learning Frameworks
     { name: 'NumPy', category: 'ml', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
     { name: 'Pandas', category: 'ml', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
     { name: 'Scikit-learn', category: 'ml', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
@@ -52,7 +52,7 @@ const Skills = () => {
     { name: 'PyTorch', category: 'ml', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
     { name: 'Keras', category: 'ml', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg' },
     { name: 'OpenCV', category: 'ml', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
-    // Tools    
+    // Tools
     { name: 'Postman', category: 'tools', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
     { name: 'Docker', category: 'tools', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
     { name: 'VS Code', category: 'tools', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
@@ -91,11 +91,88 @@ const Skills = () => {
   };
 
   return (
-    <section
-      id="skills"
-      ref={sectionRef}
-      className="relative min-h-screen flex flex-col items-center justify-center py-20 overflow-hidden galaxy-bg stars-bg"
-    >
+    <section id="skills" ref={sectionRef} className="relative py-16 md:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
+            Skills & <span className="text-glow-cyan">Technologies</span>
+          </h2>
+          <div className="section-divider max-w-xs mx-auto" />
+          <p className="text-silver-secondary text-lg md:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+             Explore the tools and technologies I have mastered across different domains . 
+            <span className="text-glow-cyan font-medium"> Click a category to filter</span>
+          </p>
+        </div>
+
+        {/* Category Selector */}
+        <div className={`flex justify-center flex-wrap gap-3 md:gap-6 mb-10 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {categories.map((category, index) => {
+            const isActive = activeCategory === category.key;
+            return (
+              <button
+                key={category.key}
+                onClick={() => setActiveCategory(prev => (prev === category.key ? null : category.key))}
+                className={`
+                  flex items-center space-x-2 p-3 rounded-xl font-semibold text-sm md:text-base
+                  transition-all duration-300 transform shadow-lg bg-space-card/50 border border-border/30
+                  ${isActive
+                    ? 'bg-glow-cyan text-cyan-600 scale-105 shadow-glow-cyan/50'
+                    : 'text-silver-secondary hover:bg-glow-cyan/10 hover:scale-[1.02]'
+                  }
+                `}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <category.icon size={18} className={isActive ? 'text-cyan-600' : 'text-glow-cyan'} />
+                <span>{category.name}</span>
+                {isActive && <CheckCircle size={14} className="text-green-600 ml-1" />}
+              </button>
+            );
+          })}
+          {/* Reset button */}
+          {activeCategory && (
+            <button
+              onClick={() => setActiveCategory(null)}
+              className="flex items-center space-x-2 p-3 rounded-xl font-semibold text-sm md:text-base bg-red-600/20 text-silver-secondary hover:bg-red-600/30 border border-red-600/30 transition-all duration-300"
+            >
+              <CheckCircle size={14} className="text-red-400" />
+              <span>Reset Filter</span>
+            </button>
+          )}
+        </div>
+
+        {/* Animated Tech Stack Grid */}
+        <div className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-4 justify-center transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {filteredSkills.map((skill, index) => (
+            <div
+              key={`${skill.name}-${index}`}
+              className={`
+                flex flex-col items-center justify-center p-3 md:p-4 rounded-xl border-2
+                bg-space-card/50 backdrop-blur-sm border-border/30
+                transition-all duration-700 ease-out transform hover:scale-110 hover:shadow-2xl hover:bg-space-card/70 hover:z-10
+                ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-70'}
+              `}
+              style={{
+                transitionDelay: getStaggerDelay(index),
+                minHeight: '90px',
+              }}
+            >
+              {skill.iconSrc && (
+                <img
+                  src={skill.iconSrc}
+                  alt={skill.name}
+                  className="w-8 h-8 md:w-10 md:h-10 mb-2 flex items-center justify-center transition-transform hover:scale-110"
+                  loading="lazy"
+                />
+              )}
+              <span className="text-silver-primary text-xs md:text-sm font-semibold text-center">
+                {skill.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <style>{`
         @keyframes float {
           0%, 100% {
@@ -105,117 +182,10 @@ const Skills = () => {
             transform: translateY(-15px);
           }
         }
-
         .float-animation {
           animation: float 3s ease-in-out infinite;
         }
       `}</style>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-transparent opacity-80"></div>
-      
-      {/* Background Grid/Lines */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-full h-[1px] bg-glow-cyan"
-            style={{ top: `${i * 10}%` }}
-          />
-        ))}
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute h-full w-[1px] bg-glow-cyan"
-            style={{ left: `${i * 10}%` }}
-          />
-        ))}
-      </div>
-
-      <div className="relative z-10 container mx-auto px-6 max-w-7xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
-            <span className="text-silver-primary">Skills &</span>
-            <span className="text-glow-cyan drop-shadow-[0_0_20px_rgba(34,211,238,0.8)]"> Technologies</span>
-          </h2>
-          <p className="max-w-3xl mx-auto text-base md:text-lg text-silver-secondary leading-relaxed">
-            Explore the specialized toolsets I master across different domains to build your next project. Click a category to see the stacks!
-          </p>
-        </div>
-
-        {/* Category Selector */}
-        <div className="flex justify-center flex-wrap gap-3 md:gap-6 mb-10">
-          {categories.map((category, index) => {
-            const isActive = activeCategory === category.key;
-            return (
-              <button
-                key={category.key}
-                onClick={() => setActiveCategory(prev => (prev === category.key ? null : category.key))}
-                className={`
-                  flex items-center space-x-2 p-2.5 md:p-3 rounded-full font-semibold text-sm md:text-base
-                  transition-all duration-300 transform shadow-lg
-                  ${isActive
-                    ? `bg-gradient-to-r ${category.color} text-black scale-105 shadow-glow-cyan/50`
-                    : 'bg-space-card text-silver-secondary hover:bg-space-card/50 hover:scale-[1.02] border border-border/30'
-                  }
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                `}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <category.icon size={18} className={isActive ? 'text-black' : 'text-glow-cyan'} />
-                <span>{category.name}</span>
-                {isActive && <CheckCircle size={14} className="text-black ml-1" />}
-              </button>
-            );
-          })}
-          {/* Reset button */}
-          {activeCategory && (
-            <button
-              onClick={() => setActiveCategory(null)}
-              className="flex items-center space-x-2 p-2.5 md:p-3 rounded-full font-semibold text-sm md:text-base bg-red-600 text-white hover:bg-red-700 transition-all duration-300"
-            >
-              Reset Filter
-            </button>
-          )}
-        </div>
-
-        {/* Animated Tech Stack Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3 md:gap-4 justify-center">
-          {filteredSkills.map((skill, index) => (
-            <div
-              key={`${skill.name}-${index}`}
-              className={`
-                flex flex-col items-center justify-center p-3 md:p-4 rounded-xl border-2
-                bg-space-card/70 backdrop-blur-sm
-                transition-all duration-700 ease-out transform
-                hover:scale-110 hover:shadow-2xl hover:bg-space-card/80 hover:z-10
-                float-animation
-                ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-70'}
-              `}
-              style={{
-                borderColor: activeCategory === skill.category ? 'var(--skill-color-border)' : 'border-border/30',
-                '--skill-color-border': categories.find(c => c.key === skill.category)?.color || 'glow-cyan',
-                transitionDelay: getStaggerDelay(index),
-                animationDelay: getFloatDelay(index),
-                minHeight: '90px',
-              }}
-            >
-              {skill.iconSrc && (
-                <img 
-                  src={skill.iconSrc} 
-                  alt={skill.name} 
-                  className="w-8 h-8 md:w-10 md:h-10 mb-1.5 md:mb-2 flex items-center justify-center group-hover:scale-110 transition-transform" 
-                />
-              )}
-              <span className="text-silver-primary text-xs md:text-sm font-semibold text-center mt-1">
-                {skill.name}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        
-      </div>
     </section>
   );
 };
