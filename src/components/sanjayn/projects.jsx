@@ -23,40 +23,25 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Neural Vision API',
-      description: 'A production-grade computer vision API capable of real-time object detection, image segmentation, and scene understanding. Built to scale with millions of requests per day.',
-      tech: ['PyTorch', 'FastAPI', 'Docker', 'AWS Lambda', 'Redis'],
+      title: 'Kongu TBI Website Redesign',
+      description: 'Redesigned university incubator website with modern UI and improved user experience. Handled full deployment pipeline from development to production hosting. Role: Full Stack Developer | Sept 2025 - Present',
+      tech: ['React', 'TailwindCSS', 'Deployment Pipeline'],
+      category: 'Web Development',
+      link: 'https://antiquewhite-rat-516664.hostingersite.com',
+    },
+    {
+      title: 'Aram Eyecare – E-commerce Platform',
+      description: 'Developed full-stack e-commerce site with product catalog, cart, and order management. Managed deployment, DNS, and SSL configuration for production. Role: Full Stack Developer | July 2025 - Aug 2025',
+      tech: ['React', 'TailwindCSS', 'Payment APIs', 'VPS Hosting'],
+      category: 'E-commerce',
+      link: 'https://www.arameyecare.com',
+    },
+    {
+      title: 'Credit Card Fraud Defense',
+      description: 'Implemented pre-trained machine learning models to classify credit card transactions as fraudulent or legitimate, addressing real-world class imbalance problems. Role: Machine Learning Developer | Apr 2025 - May 2025',
+      tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'SMOTE'],
       category: 'AI/ML',
-    },
-    {
-      title: 'Intelligent Chat Platform',
-      description: 'End-to-end conversational AI platform with multi-language support, context awareness, and integration capabilities for enterprise applications.',
-      tech: ['Transformers', 'LangChain', 'React', 'PostgreSQL', 'WebSocket'],
-      category: 'NLP',
-    },
-    {
-      title: 'MLOps Pipeline Framework',
-      description: 'Comprehensive framework for automating ML model training, validation, deployment, and monitoring. Features automated retraining and A/B testing.',
-      tech: ['Kubernetes', 'MLflow', 'Airflow', 'Prometheus', 'Grafana'],
-      category: 'DevOps',
-    },
-    {
-      title: 'Predictive Analytics Dashboard',
-      description: 'Interactive dashboard for business intelligence with real-time predictions, anomaly detection, and customizable reporting capabilities.',
-      tech: ['React', 'D3.js', 'Python', 'TensorFlow', 'ClickHouse'],
-      category: 'Analytics',
-    },
-    {
-      title: 'Autonomous Trading System',
-      description: 'Algorithmic trading system using reinforcement learning for portfolio optimization and risk management in volatile markets.',
-      tech: ['Python', 'RL Algorithms', 'Time Series', 'Apache Kafka', 'MongoDB'],
-      category: 'FinTech',
-    },
-    {
-      title: 'Healthcare AI Assistant',
-      description: 'HIPAA-compliant AI assistant for healthcare providers, featuring symptom analysis, medical record summarization, and clinical decision support.',
-      tech: ['BERT', 'Flask', 'FHIR', 'Azure', 'ElasticSearch'],
-      category: 'HealthTech',
+      link: 'https://github.com/sanjayn29/Mini-Project-ML-CCFD',
     },
   ];
 
@@ -95,7 +80,7 @@ const Projects = () => {
               </p>
 
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
@@ -106,8 +91,13 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* Hover Arrow */}
-              <div className="mt-5 flex items-center text-silver-muted group-hover:text-glow-cyan transition-colors duration-300">
+              {/* View Project Link */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 flex items-center text-silver-muted group-hover:text-glow-cyan transition-colors duration-300 hover:underline"
+              >
                 <span className="text-sm font-medium">View Project</span>
                 <svg
                   className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -122,7 +112,7 @@ const Projects = () => {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </div>
+              </a>
             </div>
           ))}
         </div>
