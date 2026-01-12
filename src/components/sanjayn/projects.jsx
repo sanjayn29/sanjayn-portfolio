@@ -43,6 +43,41 @@ const Projects = () => {
       category: 'AI/ML',
       link: 'https://github.com/sanjayn29/Mini-Project-ML-CCFD',
     },
+    {
+      title: 'Cashman – AI Powered Finance Assistant',
+      description: 'Developed a mobile application for intelligent expense tracking with OCR-based invoice parsing and ML-driven financial risk scoring. Implemented AI workflows for financial insights and secure cloud-based data management. Role: Full Stack Developer | Apr 2025 - May 2025',
+      tech: ['React Native', 'Flask', 'LangChain', 'Firebase', 'OCR', 'Machine Learning'],
+      category: 'FinTech / AI',
+      link: 'https://www.outliersunited.com/',
+    },
+    {
+      title: 'SmartSpend – AI-Driven Personal Finance Manager',
+      description: 'Designed and developed a web-based personal finance application with expense tracking, budgeting tools, financial calculators, currency conversion, and an integrated AI chatbot for financial assistance. Focused on clean UI, user experience, and scalable architecture. Role: Full Stack Developer | May 2025 - Jun 2025',
+      tech: ['React', 'TailwindCSS', 'JavaScript', 'AI Integration', 'Vercel'],
+      category: 'FinTech / AI',
+      link: 'https://smartspend-iota.vercel.app/',
+    },
+    {
+      title: 'Neovate – Student-Led AI & Digital Solutions Startup',
+      description: 'Developed and deployed the official startup portfolio website for Neovate, a student-led technology startup focused on web development, app creation, and AI-driven automation services. The platform showcases the startup’s mission, vision, services, Startup Hub, and contact workflows with a modern, responsive UI. Role: Full Stack Developer | Jun 2025 - Jul 2025',
+      tech: ['React', 'TailwindCSS', 'JavaScript', 'Vercel Hosting', 'DNS & SSL'],
+      category: 'Web Development',
+      link: 'https://www.neovateai.tech',
+    },
+    {
+      title: 'Fabric-Defect-Detector – AI-Based Textile Quality Inspection System',
+      description: 'Developed a deep learning–based model trained on a large-scale textile image dataset to accurately detect and classify multiple fabric defects such as stains, holes, and weaving faults. Integrated the model with a web interface and PostgreSQL database for defect visualization, result storage, and inspection management. Role: Full Stack Developer | Aug 2024 - Oct 2024',
+      tech: ['Python', 'Deep Learning', 'Computer Vision', 'HTML', 'CSS', 'PostgreSQL'],
+      category: 'AI / Computer Vision',
+      link: 'https://github.com/sanjayn29/SiH-Fabric-Defect-Detector',
+    },
+    {
+      title: 'Tekhel-India – AI-Powered Sports Assessment & Integrity Platform',
+      description: 'Developed a mobile and web-based platform for student fitness assessment under Tekhel-India. Built AI models for workout assessment and fake activity detection covering vertical jump, sit-ups, push-ups, pull-ups, and shuttle run. Designed a secure system architecture leveraging blockchain technology to prevent data tampering. Delivered a lightweight, user-friendly mobile app and an official website for Sports Authority of India (SAI). Role: Full Stack / AI Developer | Sep 2024 - Dec 2024',
+      tech: ['Machine Learning', 'Computer Vision', 'Blockchain', 'React Native', 'Web Development'],
+      category: 'Sports Tech / AI / Blockchain',
+      link: 'https://github.com/ponaalagar/Tekhel-India',
+    },
   ];
 
   return (
@@ -121,4 +156,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects;    
