@@ -31,90 +31,82 @@ const Achievements = () => {
     return () => observer.disconnect();
   }, []);
 
-  const linkedInProfile = 'https://www.linkedin.com/in/sanjay-n-867612297';
+  const linkedInProfile = 'https://www.linkedin.com/in/sanjayn29';
 
   const achievements = [
     {
       title: 'Red Ribbon Club – Slogan Writing Competition (2nd Prize)',
       organization: 'Red Ribbon Club, Kongu Engineering College',
       description: 'Secured Second Prize in Writing Competition to Focused on promoting awareness and social responsibility through impactful messaging.',
-      icon: '📝',
       image: April2024Img,
       date: 'Apr 2024',
       fullDate: '2024-04-01', // For sorting
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_achievement-sloganwriting-redribbionclub-activity-7210675100243677185-r-7Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
       title: 'Coding Quest – NEWELL’S 2024 (2nd Prize)',
       organization: 'Department of Artificial Intelligence, Kongu Engineering College',
       description: 'Secured Second Prize in Codeing Quest a an intra-department symposium. Demonstrated strong problem-solving and logical thinking.',
-      icon: '💻',
       image: Sept2024Img,
       date: 'Sep 2024',
       fullDate: '2024-09-01',
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_codingchallenge-ai-symposium-activity-7247119094980722688-MEym?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
-      title: 'Code Clash – SDC Fest 2024 (2nd Prize)',
+      title: 'Code Clash – SDC Fest 2024 (3rd Prize)',
       organization: 'Self Development Club, Kongu Engineering College',
-      description: 'Secured Second Prize in Code Clash, a technical coding competition during SDC Fest 2024.',
-      icon: '🏆',
+      description: 'Secured Third Prize in Code Clash, a technical coding competition during SDC Fest 2024.',
       image: Nov2024Img,
       date: 'Nov 2024',
       fullDate: '2024-11-01',
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_codingcontest-sdcfest2024-codeclash-activity-7261320712584318976-y9jL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
-      title: "KEC Hackathon 2025 – Software Edition (1st Prize - AgriTech Category)",
+      title: "KEC Hackathon 2025 – Software Edition (Runner up)",
       organization: 'Kongu Engineering College',
-      description: 'State-level 30-hour hackathon organized by REC Coding Forum and Innovation & Entrepreneurship Forum. Developed an innovative AgriTech solution with my team. Secured 1st prize in the AgriTech category.',
-      icon: '🔧',
+      description: 'State-level 30-hour hackathon organized by Innovation & Entrepreneurship Forum. Developed an AgriTech solution with my team.',
       image: Mar2025Img,
       date: 'Mar 2025',
       fullDate: '2025-03-01',
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_kec-kechackathon2025-hackathon-activity-7306903277680357377-FCnX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
-      title: 'BYTS India Hackathon (BIH) 1.0 – Best Innovation',
-      organization: 'Kongu Engineering College',
-      description: 'Secured the Best Innovation Award in the 24-hour BYTS India Hackathon (BIH) 1.0 – Artificial Intelligence Edition. Developed an innovative AI-based solution demonstrating creativity, technical depth, and real-world applicability.',
-      icon: '🤖',
+      title: 'BYTS India Hackathon (BIH) – Best Innovation',
+      organization: 'BYTS , Kongu Engineering College',
+      description: 'Secured the Best Innovation Award in BYTS India Hackathon – Artificial Intelligence Edition. Developed an Fintech AI-based solution .',
       image: Apr2025Img,
       date: 'Apr 2025',
       fullDate: '2025-04-01',
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sandeepmareeswaran_hackathon-innovation-mentorship-ugcPost-7318833641831153664-6UnE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
-      title: 'Cognitive X – Gen AI 24-Hour Hackathon – 1st Prize',
-      organization: 'Kongu Engineering College (KEC)',
-      description: 'Secured 1st Prize at the Cognitive X – Gen AI 24-Hour Hackathon in collaboration with IBM and SmartBridge. Developed CashMan, an AI-powered collaborative personal finance application.',
-      icon: '💰',
+      title: 'Cognitive X Gen AI Hackathon – 1st Prize',
+      organization: 'Kongu Engineering College',
+      description: 'Secured 1st Prize in Gen AI Hackathon collaboration with IBM and SmartBridge . Developed an AI-powered finance application.',
       image: Sept2025IbmImg,
       date: 'Apr 2025',
       fullDate: '2025-04-15', // Slight offset for sorting if same month
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_genai-hackathon-ibm-activity-7374820219371982848-25jS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     
     {
       title: 'SIH Internal Hackathon 2025 – 1st Prize',
-      organization: 'Kongu Engineering College (KEC)',
-      description: 'Secured 1st Prize in the SIH Internal Hackathon 2025 as a member of Team United Outliers under the Software/Hardware category. Qualified for Smart India Hackathon via innovative solution for problem ID: SIH25073.',
-      icon: '👥',
+      organization: 'Kongu Engineering College',
+      description: 'Secured 1st Prize in the SIH Internal Hackathon under the Software category. Developed an AI-powered solution for problem ID: SIH25073.',
       image: Sept2025Img,
       date: 'Sep 2025',
       fullDate: '2025-09-01',
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_smartindiahackathon-teamwork-innovation-activity-7376306740541177857-KX6R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     
     {
       title: 'Smart India Hackathon 2025 – Hardware Edition (Grand Finale)',
       organization: 'Ministry of Education, Government of India',
-      description: 'Participated in the Smart India Hackathon 2025 – Hardware Edition Grand Finale as a Team Member. Contributed to hardware-focused innovative solution, gaining national-level experience in problem-solving and collaboration.',
-      icon: '⚙️',
+      description: 'Participated in the Smart India Hackathon Grand Finale. Contributed to hardware solution and gaining national-level experience.',
       image: Dec2025Img,
       date: 'Dec 2025',
       fullDate: '2025-12-08', // Specific dates from original
-      link: linkedInProfile,
+      link: "https://www.linkedin.com/posts/sanjayn29_sih2025-smartindiahackathon-hackathonexperience-activity-7408162536996597760-aPqo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
   ];
 
@@ -139,13 +131,16 @@ const Achievements = () => {
   return (
     <section id="achievements" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
-            Achievements
-          </h2>
-          <div className="section-divider max-w-xs mx-auto" />
-        </div>
+       {/* Section Header */}
+<div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
+    Key <span className="text-glow-cyan">Achievements</span>
+  </h2>
+  <div className="section-divider max-w-xs mx-auto" />
+  <p className="text-silver-secondary text-lg md:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+    Discover my standout accomplishments in hackathons , coding competitions and innovation challenges.
+  </p>
+</div>
 
         {/* Achievements by Year - Rows and Columns */}
         <div className={`space-y-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -153,7 +148,7 @@ const Achievements = () => {
             <div key={year} className="space-y-6" style={{ transitionDelay: `${(yearIndex + 1) * 200}ms` }}>
               {/* Year Header */}
               <div className="flex items-center gap-3">
-                <div className="w-1 h-8 bg-glow-blue rounded-full"></div>
+                <div className="w-1 h-8 bg-glow-cyan rounded-full"></div>
                 <h3 className="font-display text-2xl font-bold text-silver-primary">
                   {year}
                 </h3>
@@ -164,7 +159,7 @@ const Achievements = () => {
                 {groupByYear[year].map((achievement, index) => (
                   <div
                     key={index}
-                    className="group glass-card transition-all duration-700 hover-glow-blue"
+                    className="group glass-card transition-all duration-700 hover-glow-cyan"
                     style={{ transitionDelay: `${(index + 1) * 100}ms` }}
                   >
                     {/* Full Image */}
@@ -177,7 +172,7 @@ const Achievements = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                          <div className="text-6xl opacity-75">{achievement.icon}</div>
+                          <div className="text-6xl opacity-75"></div>
                         </div>
                       )}
                       {/* Semi-transparent overlay for text readability */}
@@ -187,12 +182,12 @@ const Achievements = () => {
                     {/* Content */}
                     <div className="p-4">
                       {/* Title */}
-                      <h4 className="font-display text-lg font-semibold text-silver-primary mb-2 group-hover:text-glow-blue transition-colors duration-300 line-clamp-2">
+                      <h4 className="font-display text-lg font-semibold text-silver-primary mb-2 group-hover:text-glow-cyan transition-colors duration-300 line-clamp-2">
                         {achievement.title}
                       </h4>
 
                       {/* Organization */}
-                      <p className="text-glow-blue text-sm font-medium mb-2">
+                      <p className="text-glow-cyan text-sm font-medium mb-2">
                         {achievement.organization}
                       </p>
 
@@ -208,7 +203,7 @@ const Achievements = () => {
                           href={achievement.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-glow-blue text-xs hover:text-silver-primary transition-colors duration-300 flex items-center gap-1"
+                          className="text-glow-cyan text-xs hover:text-silver-primary transition-colors duration-300 flex items-center gap-1"
                         >
                           <span>LinkedIn</span>
                           <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
@@ -228,4 +223,4 @@ const Achievements = () => {
   );
 };
 
-export default Achievements;
+export default Achievements;    
