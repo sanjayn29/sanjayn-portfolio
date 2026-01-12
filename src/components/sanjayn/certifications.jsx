@@ -113,12 +113,15 @@ const Certifications = () => {
     <section id="certifications" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
-            Certifications
-          </h2>
-          <div className="section-divider max-w-xs mx-auto" />
-        </div>
+<div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
+    Professional <span className="text-glow-cyan">Certifications</span>
+  </h2>
+  <div className="section-divider max-w-xs mx-auto" />
+  <p className="text-silver-secondary text-lg md:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+    Explore my recognized achievements and credentials in AI, machine learning, and software development from top industry leaders.
+  </p>
+</div>
 
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
