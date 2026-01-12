@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -6,7 +7,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    subject: '', // This will be used for mobile number
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,21 +38,69 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-    
-    setTimeout(() => setSubmitStatus(null), 5000);
+    setSubmitStatus(null);
+
+    // Updated Public Key
+    const publicKey = 'sa9hJIDwFVtiMk2kq';
+
+    // Updated Template IDs
+    const adminTemplateId = 'template_fcp2ud1'; // Admin notification template
+    const userTemplateId = 'template_p5e7nxa'; // User confirmation template
+
+    // Updated Service ID
+    const serviceId = 'service_07qwlir';
+
+    try {
+      // Send notification to admin (sanjaynavaneethamurali@gmail.com)
+      await emailjs.send(
+        serviceId,
+        adminTemplateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.subject, // Using 'subject' field as mobile
+          message: formData.message,
+          from_email: 'sanjaynavaneethamurali@gmail.com', // Admin email as sender
+          time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }) // Dynamic timestamp for admin template
+        },
+        publicKey
+      );
+
+      // Send confirmation to user
+      await emailjs.send(
+        serviceId, // Same service ID
+        userTemplateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.subject,
+          message: formData.message,
+          from_email: 'sanjaynavaneethamurali@gmail.com' // Admin email as sender
+        },
+        publicKey
+      );
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    } catch (error) {
+      console.error('Full EmailJS Error:', error);
+      console.error('Status:', error.status);
+      console.error('Text:', error.text);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Fixed: Timeout only on success
+      if (submitStatus === 'success') {
+        setTimeout(() => setSubmitStatus(null), 5000);
+      }
+    }
   };
 
   const contactInfo = [
     {
       label: 'Email',
-      value: 'sanjay@example.com',
+      value: 'sanjaynavaneethamurali@gmail.com',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -60,7 +109,7 @@ const Contact = () => {
     },
     {
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Tamil Nadu, IN',
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -113,6 +162,8 @@ const Contact = () => {
                 <div
                   key={index}
                   className="flex items-center gap-4 p-4 glass-card hover-glow-cyan"
+                  onClick={() => window.open(info.value.startsWith('http') ? info.value : `https://${info.value}`, '_blank')} // Make clickable if URL
+                  style={{ cursor: 'pointer' }}
                 >
                   <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-glow-cyan/10 text-glow-cyan">
                     {info.icon}
@@ -164,10 +215,10 @@ const Contact = () => {
 
               <div>
                 <label htmlFor="subject" className="block text-silver-secondary text-sm mb-2">
-                  Mobile Number 
+                  Mobile Number
                 </label>
                 <input
-                  type="text"
+                  type="tel"
                   id="subject"
                   name="subject"
                   value={formData.subject}
@@ -197,7 +248,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-space-card border border-glow-cyan/50 rounded-lg text-silver-primary font-medium transition-all duration-500 hover-glow-cyan hover:border-glow-cyan disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-8 py-4 bg-glow-cyan text-black font-medium rounded-lg transition-all duration-500 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
@@ -213,8 +264,13 @@ const Contact = () => {
               </button>
 
               {submitStatus === 'success' && (
-                <div className="p-4 bg-glow-cyan/10 border border-glow-cyan/30 rounded-lg text-glow-cyan text-center">
+                <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-center">
                   Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center">
+                  Failed to send message. Check console for details and try again.
                 </div>
               )}
             </form>
