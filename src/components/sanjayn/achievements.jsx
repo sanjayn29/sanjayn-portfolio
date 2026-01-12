@@ -36,8 +36,8 @@ const Achievements = () => {
   const achievements = [
     {
       title: 'Red Ribbon Club – Slogan Writing Competition (2nd Prize)',
-      organization: 'Kongu Engineering College',
-      description: 'Won Second Prize in the Slogan Writing Competition conducted by the Red Ribbon Club. Focused on promoting awareness and social responsibility through impactful messaging. Recognized for creativity, clarity, and relevance among first-year participants.',
+      organization: 'Red Ribbon Club, Kongu Engineering College',
+      description: 'Secured Second Prize in Writing Competition to Focused on promoting awareness and social responsibility through impactful messaging.',
       icon: '📝',
       image: April2024Img,
       date: 'Apr 2024',
@@ -45,9 +45,9 @@ const Achievements = () => {
       link: linkedInProfile,
     },
     {
-      title: 'Coding Quest – AI Association (Prize Winner)',
+      title: 'Coding Quest – NEWELL’S 2024 (2nd Prize)',
       organization: 'Department of Artificial Intelligence, Kongu Engineering College',
-      description: 'Secured a prize position in the Coding Quest event as part of NEWELL’S 2024, an intra-department symposium organized by the AI Association. Demonstrated strong problem-solving, coding proficiency, and logical thinking.',
+      description: 'Secured Second Prize in Codeing Quest a an intra-department symposium. Demonstrated strong problem-solving and logical thinking.',
       icon: '💻',
       image: Sept2024Img,
       date: 'Sep 2024',
@@ -55,9 +55,9 @@ const Achievements = () => {
       link: linkedInProfile,
     },
     {
-      title: 'Code Clash – SDC Fest 2025 (2nd Prize)',
+      title: 'Code Clash – SDC Fest 2024 (2nd Prize)',
       organization: 'Self Development Club, Kongu Engineering College',
-      description: 'Secured Second Prize in Code Clash, a technical coding competition during SDC Fest 2025. Demonstrated strong programming skills, logical thinking, and competitive problem-solving abilities.',
+      description: 'Secured Second Prize in Code Clash, a technical coding competition during SDC Fest 2024.',
       icon: '🏆',
       image: Nov2024Img,
       date: 'Nov 2024',
