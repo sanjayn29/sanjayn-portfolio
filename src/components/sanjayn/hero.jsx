@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import SanjayImage from '../../assert/Sanjay N.png';
+import SanjayImage from '../../assert/SanjayN.png';
 
 const skills = [
   { name: 'React js', color: 'from-blue-500 to-cyan-500' },

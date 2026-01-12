@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import SanjayImage from '../../assert/img3.jpg';
+import SanjayImage from '../../assert/SanjayN2.jpg';
 import { FaPhone } from 'react-icons/fa';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import { SiLeetcode, SiGithub, SiLinkedin } from 'react-icons/si';

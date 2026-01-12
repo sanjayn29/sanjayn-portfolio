@@ -1,17 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 // Image imports (path: src/assert/)
-import April2024Img from '../../assert/April-2024.jpg';
-import Sept2024Img from '../../assert/Sept-2024.jpg';
-import Nov2024Img from '../../assert/Nov-2024.jpg';
-import Mar2025Img from '../../assert/Mar-2025.jpg';
-import Apr2025Img from '../../assert/Apr-2025.jpg';
-import Sept2025IbmImg from '../../assert/sept-2025-ibm.jpg';
-import Sept2025Img from '../../assert/Sept-2025.jpg';
-import Dec2025Img from '../../assert/dec-2025.jpg';
-// New images - add these files to src/assert/ folder if available
-// import Techno2025Img from '../../assert/techno-2025.jpg';
-// import Madathon2025Img from '../../assert/madathon-2025.jpg';
+import April2024Img from '../../assert/RRC.jpg';
+import Sept2024Img from '../../assert/AI-Code.jpg';
+import Nov2024Img from '../../assert/SCD-Code.jpg';
+import Mar2025Img from '../../assert/KEC-Hack.jpg';
+import Apr2025Img from '../../assert/BYTS-Hack.jpg';
+import Sept2025IbmImg from '../../assert/IBM-Hack.jpg';
+import Sept2025Img from '../../assert/SIH-KEC.jpg';
+import Dec2025Img from '../../assert/SIH-Final.jpg';
 
 const Achievements = () => {
   const sectionRef = useRef(null);
@@ -121,8 +118,23 @@ const Achievements = () => {
     },
   ];
 
-  // Sort all achievements by fullDate descending
-  const sortedAchievements = [...achievements].sort((a, b) => new Date(b.fullDate) - new Date(a.fullDate));
+  // Group achievements by year
+  const groupByYear = achievements.reduce((groups, achievement) => {
+    const year = achievement.fullDate.split('-')[0];
+    if (!groups[year]) {
+      groups[year] = [];
+    }
+    groups[year].push(achievement);
+    return groups;
+  }, {});
+
+  // Sort years descending (2025 first, then 2024)
+  const sortedYears = Object.keys(groupByYear).sort((a, b) => b - a);
+
+  // Sort achievements within each year by fullDate descending
+  sortedYears.forEach(year => {
+    groupByYear[year].sort((a, b) => new Date(b.fullDate) - new Date(a.fullDate));
+  });
 
   return (
     <section id="achievements" ref={sectionRef} className="relative py-24 md:py-32">
@@ -135,63 +147,78 @@ const Achievements = () => {
           <div className="section-divider max-w-xs mx-auto" />
         </div>
 
-        {/* Achievements Grid - Rows and Columns */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {sortedAchievements.map((achievement, index) => (
-            <div
-              key={index}
-              className="group glass-card transition-all duration-700 hover-glow-blue"
-              style={{ transitionDelay: `${(index + 1) * 100}ms` }}
-            >
-              {/* Full Image - Takes full card height initially, but overlay on hover */}
-              <div className="relative h-64 mb-4 overflow-hidden rounded-lg">
-                {achievement.image ? (
-                  <img
-                    src={achievement.image}
-                    alt={`${achievement.title} proof`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                    <div className="text-6xl opacity-75">{achievement.icon}</div>
-                  </div>
-                )}
-                {/* Semi-transparent overlay for text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+        {/* Achievements by Year - Rows and Columns */}
+        <div className={`space-y-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {sortedYears.map((year, yearIndex) => (
+            <div key={year} className="space-y-6" style={{ transitionDelay: `${(yearIndex + 1) * 200}ms` }}>
+              {/* Year Header */}
+              <div className="flex items-center gap-3">
+                <div className="w-1 h-8 bg-glow-blue rounded-full"></div>
+                <h3 className="font-display text-2xl font-bold text-silver-primary">
+                  {year}
+                </h3>
               </div>
 
-              {/* Content Overlay - Always visible below image */}
-              <div className="p-4">
-                {/* Title */}
-                <h3 className="font-display text-lg font-semibold text-silver-primary mb-2 group-hover:text-glow-blue transition-colors duration-300 line-clamp-2">
-                  {achievement.title}
-                </h3>
-
-                {/* Organization */}
-                <p className="text-glow-blue text-sm font-medium mb-2">
-                  {achievement.organization}
-                </p>
-
-                {/* Description */}
-                <p className="text-silver-muted text-sm leading-relaxed mb-3 line-clamp-3">
-                  {achievement.description}
-                </p>
-
-                {/* Footer: Date and Link */}
-                <div className="flex justify-between items-center pt-2 border-t border-gray-600">
-                  <span className="text-xs opacity-75">{achievement.date}</span>
-                  <a
-                    href={achievement.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-glow-blue text-xs hover:text-silver-primary transition-colors duration-300 flex items-center gap-1"
+              {/* Grid for this year */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {groupByYear[year].map((achievement, index) => (
+                  <div
+                    key={index}
+                    className="group glass-card transition-all duration-700 hover-glow-blue"
+                    style={{ transitionDelay: `${(index + 1) * 100}ms` }}
                   >
-                    <span>LinkedIn</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.02-1.57.27-2.12a2.89 2.89 0 0 1 2.24-1.08c.78 0 1.62.42 1.62 1.88v4.25h2.79v-5.5c0-2.48-1.4-3.84-3.26-4.08a3.5 3.5 0 0 0-3.57 3.47v4.15h-2.79V9.18c0-.53 0-1.05.07-1.57s.23-1 .5-1.37.56-.7 1-.87.88-.32 1.54-.32c1.25 0 2.08.74 2.08 1.82v5.42h-2.79z" />
-                    </svg>
-                  </a>
-                </div>
+                    {/* Full Image */}
+                    <div className="relative h-64 mb-4 overflow-hidden rounded-lg">
+                      {achievement.image ? (
+                        <img
+                          src={achievement.image}
+                          alt={`${achievement.title} proof`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                          <div className="text-6xl opacity-75">{achievement.icon}</div>
+                        </div>
+                      )}
+                      {/* Semi-transparent overlay for text readability */}
+                      <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-4">
+                      {/* Title */}
+                      <h4 className="font-display text-lg font-semibold text-silver-primary mb-2 group-hover:text-glow-blue transition-colors duration-300 line-clamp-2">
+                        {achievement.title}
+                      </h4>
+
+                      {/* Organization */}
+                      <p className="text-glow-blue text-sm font-medium mb-2">
+                        {achievement.organization}
+                      </p>
+
+                      {/* Description */}
+                      <p className="text-silver-muted text-sm leading-relaxed mb-3 line-clamp-3">
+                        {achievement.description}
+                      </p>
+
+                      {/* Footer: Date and Link */}
+                      <div className="flex justify-between items-center pt-2 border-t border-gray-600">
+                        <span className="text-xs opacity-75">{achievement.date}</span>
+                        <a
+                          href={achievement.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-glow-blue text-xs hover:text-silver-primary transition-colors duration-300 flex items-center gap-1"
+                        >
+                          <span>LinkedIn</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.02-1.57.27-2.12a2.89 2.89 0 0 1 2.24-1.08c.78 0 1.62.42 1.62 1.88v4.25h2.79v-5.5c0-2.48-1.4-3.84-3.26-4.08a3.5 3.5 0 0 0-3.57 3.47v4.15h-2.79V9.18c0-.53 0-1.05.07-1.57s.23-1 .5-1.37.56-.7 1-.87.88-.32 1.54-.32c1.25 0 2.08.74 2.08 1.82v5.42h-2.79z" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
