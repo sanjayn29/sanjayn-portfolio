@@ -164,7 +164,7 @@ const Contact = () => {
 
               <div>
                 <label htmlFor="subject" className="block text-silver-secondary text-sm mb-2">
-                  Subject
+                  Mobile Number 
                 </label>
                 <input
                   type="text"
@@ -174,7 +174,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-space-card border border-border rounded-lg text-silver-primary placeholder-silver-muted focus:outline-none focus:ring-2 focus:ring-glow-cyan/50 focus:border-glow-cyan transition-all duration-300"
-                  placeholder="What's this about?"
+                  placeholder="+91 1234567890"
                 />
               </div>
 
