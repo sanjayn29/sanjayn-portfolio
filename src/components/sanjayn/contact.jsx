@@ -168,16 +168,23 @@ const Contact = () => {
   return (
     <section id="contact" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-silver-muted max-w-md mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you.
-          </p>
-          <div className="section-divider max-w-xs mx-auto mt-6" />
-        </div>
+       {/* Section Header */}
+<div
+  className={`text-center mb-12 transition-all duration-700 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+  }`}
+>
+  <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
+    Get <span className="text-glow-cyan">In Touch</span>
+  </h2>
+
+  <div className="section-divider max-w-xs mx-auto" />
+
+  <p className="text-silver-secondary text-lg md:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
+    Have a project in mind, an idea to discuss, or an opportunity to collaborate? I’d be glad to connect.
+  </p>
+</div>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
