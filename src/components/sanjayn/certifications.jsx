@@ -23,52 +23,89 @@ const Certifications = () => {
 
   const certifications = [
     {
-      title: 'AWS Solutions Architect Professional',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      credentialId: 'AWS-SAP-2023',
+      title: 'Generative AI with Diffusion model',
+      issuer: 'NVIDIA',
+      date: 'Oct 2025',
+      credentialId: 'xs_A4j5iRO-Z55I__r8wkw',
+      link: 'https://learn.nvidia.com/certificates?id=xs_A4j5iRO-Z55I__r8wkw',
     },
     {
-      title: 'Google Cloud Professional ML Engineer',
-      issuer: 'Google Cloud',
-      date: '2023',
-      credentialId: 'GCP-ML-2023',
+      title: 'AI Foundations Associate',
+      issuer: 'Oracle',
+      date: 'Aug 2025',
+      credentialId: 'E9F1F7F2999AABDBE901A6E587227E9101B65FBEDF0734E888729382D663269A',
+      link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=E9F1F7F2999AABDBE901A6E587227E9101B65FBEDF0734E888729382D663269A',
     },
     {
-      title: 'TensorFlow Developer Certificate',
-      issuer: 'Google',
-      date: '2022',
-      credentialId: 'TF-DEV-2022',
+      title: 'AI Vector Search',
+      issuer: 'Oracle',
+      date: 'Aug 2025',
+      credentialId: '37254E3ABB41A34105032D1EA4C4AF4DF6936448EC4C42A15CF20AE9BD04B8B7',
+      link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=37254E3ABB41A34105032D1EA4C4AF4DF6936448EC4C42A15CF20AE9BD04B8B7',
     },
     {
-      title: 'Deep Learning Specialization',
-      issuer: 'DeepLearning.AI',
-      date: '2022',
-      credentialId: 'DL-SPEC-2022',
+      title: 'Data Science',
+      issuer: 'Oracle',
+      date: 'Aug 2025',
+      credentialId: 'D086E3F7FD758BC6D59D1F6E47FC331ABFBD2B7A72737FF1EF77B78241C8F5CD',
+      link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=D086E3F7FD758BC6D59D1F6E47FC331ABFBD2B7A72737FF1EF77B78241C8F5CD',
     },
     {
-      title: 'Kubernetes Administrator (CKA)',
-      issuer: 'Cloud Native Computing Foundation',
-      date: '2022',
-      credentialId: 'CKA-2022',
+      title: 'Generative AI',
+      issuer: 'Oracle',
+      date: 'Aug 2025',
+      credentialId: '3AD822F6377BB599ACC430174A2129B30211CE58A13DA79DC787BCAE46FCD5FC',
+      link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=3AD822F6377BB599ACC430174A2129B30211CE58A13DA79DC787BCAE46FCD5FC',
     },
     {
-      title: 'Microsoft Azure AI Engineer',
-      issuer: 'Microsoft',
-      date: '2021',
-      credentialId: 'AZ-AI-2021',
+      title: 'GenAI Powered Data Analytics Job Simulation',
+      issuer: 'Forage',
+      date: 'Aug 2025',
+      credentialId: '1756282963815',
+      link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_AajPgBJNNRMkfmBnQ_1756282963815_completion_certificate.pdf',
     },
     {
-      title: 'MongoDB Developer Associate',
-      issuer: 'MongoDB University',
-      date: '2021',
-      credentialId: 'MDB-DEV-2021',
+      title: 'JavaScript for Beginners: The Complete Course for Beginners',
+      issuer: 'Udemy',
+      date: 'Feb 2025',
+      credentialId: 'UC-75dbad80-c65b-4310-895d-86bec9541368',
+      link: 'https://www.udemy.com/certificate/UC-75dbad80-c65b-4310-895d-86bec9541368/',
     },
     {
-      title: 'Stanford Machine Learning',
-      issuer: 'Coursera / Stanford',
-      date: '2020',
-      credentialId: 'STAN-ML-2020',
+      title: 'Python Complete Course For Python Beginners',
+      issuer: 'Udemy',
+      date: 'Dec 2024',
+      credentialId: 'UC-dc53b644-02c4-4c46-8c98-ef071d742a77',
+      link: 'https://www.udemy.com/certificate/UC-dc53b644-02c4-4c46-8c98-ef071d742a77/',
+    },
+    {
+      title: 'The Complete C Programming Course for Basic to Expert',
+      issuer: 'Udemy',
+      date: 'Jul 2024',
+      credentialId: 'UC-5c4ead9c-2d64-4508-87ea-cee088e67861',
+      link: 'https://www.udemy.com/certificate/UC-5c4ead9c-2d64-4508-87ea-cee088e67861/',
+    },
+    {
+      title: 'CSS Fundamentals: Comprehensive Training for Web Developers',
+      issuer: 'Udemy',
+      date: 'Jul 2024',
+      credentialId: 'UC-63e68790-9d1f-4fef-820a-e10b8a9c119a',
+      link: 'https://www.udemy.com/certificate/UC-63e68790-9d1f-4fef-820a-e10b8a9c119a/',
+    },
+    {
+      title: 'Learn HTML Basic To Advanced',
+      issuer: 'Udemy',
+      date: 'Jul 2024',
+      credentialId: 'UC-5a5d2ded-be49-4944-a2b8-a1ed6901b2cf',
+      link: 'https://www.udemy.com/certificate/UC-5a5d2ded-be49-4944-a2b8-a1ed6901b2cf/',
+    },
+    
+    {
+      title: 'Data Structures in C',
+      issuer: 'Great Learning',
+      date: 'Jul 2024',
+      credentialId: 'IZHJODPQ',
+      link: 'https://www.mygreatlearning.com/certificate/IZHJODPQ',
     },
   ];
 
@@ -117,7 +154,14 @@ const Certifications = () => {
                 <div className="flex items-center gap-3 mt-2 text-silver-muted text-xs">
                   <span>{cert.date}</span>
                   <span className="w-1 h-1 rounded-full bg-border" />
-                  <span className="font-mono">{cert.credentialId}</span>
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono hover:text-glow-cyan transition-colors duration-300 underline decoration-1 underline-offset-2"
+                  >
+                    click to view
+                  </a>
                 </div>
               </div>
             </div>
