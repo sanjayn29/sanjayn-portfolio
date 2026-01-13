@@ -40,7 +40,7 @@ const Achievements = () => {
       description: 'Secured Second Prize in Writing Competition to Focused on promoting awareness and social responsibility through impactful messaging.',
       image: April2024Img,
       date: 'Apr 2024',
-      fullDate: '2024-04-01', // For sorting
+      fullDate: '2024-04-13', // For sorting
       link: "https://www.linkedin.com/posts/sanjayn29_achievement-sloganwriting-redribbionclub-activity-7210675100243677185-r-7Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
@@ -49,7 +49,7 @@ const Achievements = () => {
       description: 'Secured Second Prize in Codeing Quest a an intra-department symposium. Demonstrated strong problem-solving and logical thinking.',
       image: Sept2024Img,
       date: 'Sep 2024',
-      fullDate: '2024-09-01',
+      fullDate: '2024-09-11',
       link: "https://www.linkedin.com/posts/sanjayn29_codingchallenge-ai-symposium-activity-7247119094980722688-MEym?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
@@ -58,7 +58,7 @@ const Achievements = () => {
       description: 'Secured Third Prize in Code Clash, a technical coding competition during SDC Fest 2024.',
       image: Nov2024Img,
       date: 'Nov 2024',
-      fullDate: '2024-11-01',
+      fullDate: '2024-11-09',
       link: "https://www.linkedin.com/posts/sanjayn29_codingcontest-sdcfest2024-codeclash-activity-7261320712584318976-y9jL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
@@ -67,7 +67,7 @@ const Achievements = () => {
       description: 'State-level 30-hour hackathon organized by Innovation & Entrepreneurship Forum. Developed an AgriTech solution with my team.',
       image: Mar2025Img,
       date: 'Mar 2025',
-      fullDate: '2025-03-01',
+      fullDate: '2025-03-10',
       link: "https://www.linkedin.com/posts/sanjayn29_kec-kechackathon2025-hackathon-activity-7306903277680357377-FCnX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
@@ -76,7 +76,7 @@ const Achievements = () => {
       description: 'Secured the Best Innovation Award in BYTS India Hackathon – Artificial Intelligence Edition. Developed an Fintech AI-based solution .',
       image: Apr2025Img,
       date: 'Apr 2025',
-      fullDate: '2025-04-01',
+      fullDate: '2025-04-11',
       link: "https://www.linkedin.com/posts/sandeepmareeswaran_hackathon-innovation-mentorship-ugcPost-7318833641831153664-6UnE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     {
@@ -84,8 +84,8 @@ const Achievements = () => {
       organization: 'Kongu Engineering College',
       description: 'Secured 1st Prize in Gen AI Hackathon collaboration with IBM and SmartBridge . Developed an AI-powered finance application.',
       image: Sept2025IbmImg,
-      date: 'Apr 2025',
-      fullDate: '2025-04-15', // Slight offset for sorting if same month
+      date: 'Sep 2025',
+      fullDate: '2025-09-16', // Slight offset for sorting if same month
       link: "https://www.linkedin.com/posts/sanjayn29_genai-hackathon-ibm-activity-7374820219371982848-25jS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     
@@ -95,7 +95,7 @@ const Achievements = () => {
       description: 'Secured 1st Prize in the SIH Internal Hackathon under the Software category. Developed an AI-powered solution for problem ID: SIH25073.',
       image: Sept2025Img,
       date: 'Sep 2025',
-      fullDate: '2025-09-01',
+      fullDate: '2025-09-20',
       link: "https://www.linkedin.com/posts/sanjayn29_smartindiahackathon-teamwork-innovation-activity-7376306740541177857-KX6R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE6uCn0BhkN04Y115I8zfMXgfhIum5R1PQk",
     },
     
