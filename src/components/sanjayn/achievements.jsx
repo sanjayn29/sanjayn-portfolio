@@ -36,7 +36,7 @@ const Achievements = () => {
   const achievements = [
     {
       title: 'Red Ribbon Club – Slogan Writing Competition (2nd Prize)',
-      organization: 'Red Ribbon Club, Kongu Engineering College',
+      organization: 'Red Ribbon Club (RRC), Kongu Engineering College',
       description: 'Secured Second Prize in Writing Competition to Focused on promoting awareness and social responsibility through impactful messaging.',
       image: April2024Img,
       date: 'Apr 2024',
@@ -54,8 +54,8 @@ const Achievements = () => {
     },
     {
       title: 'Code Clash – SDC Fest 2024 (3rd Prize)',
-      organization: 'Self Development Club, Kongu Engineering College',
-      description: 'Secured Third Prize in Code Clash, a technical coding competition during SDC Fest 2024.',
+      organization: 'Self Development Club (SDC), Kongu Engineering College',
+      description: 'Secured Third Prize in Code Clash, a technical coding competition during SDC Fest 2024. Demonstrated strong logical thinking.',
       image: Nov2024Img,
       date: 'Nov 2024',
       fullDate: '2024-11-09',
