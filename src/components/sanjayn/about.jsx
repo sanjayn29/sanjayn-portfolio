@@ -141,20 +141,6 @@ Currently pursuing B.Tech in Artificial Intelligence & Machine Learning at Kongu
           </div>
         </div>
       </div>
-
-      {/* CSS for animations */}
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 0.6; }
-          50% { opacity: 1; }
-        }
-        
-        .section-divider {
-          height: 3px;
-          background: linear-gradient(90deg, transparent, var(--glow-cyan), transparent);
-          border-radius: 1.5px;
-        }
-      `}</style>
     </section>
   );
 };

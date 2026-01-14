@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 // Image imports (path: src/assert/)
 import April2024Img from '../../assert/RRC.jpg';
@@ -12,24 +12,6 @@ import Dec2025Img from '../../assert/SIH-Final.jpg';
 
 const Achievements = () => {
   const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const linkedInProfile = 'https://www.linkedin.com/in/sanjayn29';
 
@@ -132,7 +114,7 @@ const Achievements = () => {
     <section id="achievements" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
        {/* Section Header */}
-<div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+<div className="text-center mb-12">
   <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-silver-primary mb-4">
     Key <span className="text-glow-cyan">Achievements</span>
   </h2>
@@ -143,9 +125,9 @@ const Achievements = () => {
 </div>
 
         {/* Achievements by Year - Rows and Columns */}
-        <div className={`space-y-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="space-y-12">
           {sortedYears.map((year, yearIndex) => (
-            <div key={year} className="space-y-6" style={{ transitionDelay: `${(yearIndex + 1) * 200}ms` }}>
+            <div key={year} className="space-y-6">
               {/* Year Header */}
               <div className="flex items-center gap-3">
                 <div className="w-1 h-8 bg-glow-cyan rounded-full"></div>
@@ -159,8 +141,7 @@ const Achievements = () => {
                 {groupByYear[year].map((achievement, index) => (
                   <div
                     key={index}
-                    className="group glass-card transition-all duration-700 hover-glow-cyan"
-                    style={{ transitionDelay: `${(index + 1) * 100}ms` }}
+                    className="group glass-card hover-glow-cyan"
                   >
                     {/* Full Image */}
                     <div className="relative h-64 mb-4 overflow-hidden rounded-lg">
@@ -168,15 +149,15 @@ const Achievements = () => {
                         <img
                           src={achievement.image}
                           alt={`${achievement.title} proof`}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                       ) : (
                         <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                          <div className="text-6xl opacity-75"></div>
+                          <div className="text-6xl opacity-75">🏆</div>
                         </div>
                       )}
                       {/* Semi-transparent overlay for text readability */}
-                      <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     </div>
 
                     {/* Content */}
@@ -223,4 +204,4 @@ const Achievements = () => {
   );
 };
 
-export default Achievements;    
+export default Achievements;
