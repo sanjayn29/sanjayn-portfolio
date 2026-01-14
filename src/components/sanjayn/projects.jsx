@@ -32,25 +32,25 @@ const Projects = () => {
   const projects = [
     {
       title: 'Kongu TBI Website Redesign',
-      description: 'Redesigned College incubator website with modern UI and improved user experience. Handled full deployment pipeline from development to production hosting. Role: Full Stack Developer',
+      description: 'Redesigned College incubator website with modern UI , improved user experience and Handled full deployment pipeline .',
       tech: ['React', 'TailwindCSS', 'Firebase'],
       category: 'Web Development',
-      date: 'Sep 2025 - Present',
+      date: 'Sept 2025 - Present',
       link: 'https://antiquewhite-rat-516664.hostingersite.com',
       image: KongutbiImg,
     },
     {
       title: 'Aram Eyecare – E-commerce Platform',
-      description: 'Developed full-stack e-commerce site with product catalog, cart, and order management. Role: Full Stack Developer',
+      description: 'Developed full-stack e-commerce site with product catalog , cart , Payment Intergration , and order management .',
       tech: ['React', 'TailwindCSS', 'Payment APIs', 'Firebase'],
       category: 'E-commerce',
-      date: 'Jul 2025 - Aug 2025',
+      date: 'July 2025 - Aug 2025',
       link: 'https://www.arameyecare.com',
       image: ArameyecareImg,
     },
     {
       title: 'Cashman – AI Powered Finance Assistant',
-      description: 'Developed a mobile application for intelligent expense tracking with OCR-based invoice parsing and ML-driven financial risk scoring. Implemented AI workflows for financial insights and secure cloud-based data management. Role: Full Stack Developer',
+      description: 'Developed a mobile application for intelligent expense tracking with OCR-based invoice parsing and ML-driven financial risk scoring .',
       tech: ['React Native', 'Flask', 'LangChain', 'Firebase', 'OCR'],
       category: 'FinTech / AI',
       date: 'Apr 2025 - May 2025',
@@ -59,32 +59,49 @@ const Projects = () => {
     },
     {
       title: 'SmartSpend – AI-Driven Personal Finance Manager',
-      description: 'Designed and developed a web-based personal finance application with expense tracking, budgeting tools, financial calculators, currency conversion, and an integrated AI chatbot for financial assistance. Focused on clean UI, user experience, and scalable architecture. Role: Full Stack Developer',
+      description: 'Developed a web-based finance application with expense tracking, budgeting tools and an integrated AI chatbot for financial assistance .',
       tech: ['React', 'TailwindCSS', 'Firebase', 'AI Integration', 'Vercel'],
       category: 'FinTech / AI',
-      date: 'May 2025 - Jun 2025',
+      date: 'Aug 2025 - Sept 2025',
       link: 'https://smartspend-iota.vercel.app/',
       image: SmartspendImg,
     },
     {
-      title: 'Neovate – Student-Led AI & Digital Solutions Startup',
-      description: 'Developed and deployed the official startup portfolio website for Neovate, a student-led technology startup focused on web development, app creation, and AI-driven automation services. The platform showcases the startup’s mission, vision, services, Startup Hub, and contact workflows with a modern, responsive UI. Role: Full Stack Developer',
+      title: 'Neovate – AI & Digital Solutions Startup',
+      description: 'Developed the portfolio website for Neovate, a technology startup focused on web & App development and AI-driven services .',
       tech: ['React', 'TailwindCSS' ,'EmailJS'],
       category: 'Web Development',
-      date: 'Jun 2025 - Jul 2025',
+      date: 'Oct 2025 - Nov 2025',
       link: 'https://www.neovateai.tech',
       image: NeovateImg,
     },
     {
-      title: 'Fabric-Defect-Detector – AI-Based Textile Quality Inspection System',
-      description: 'Developed a deep learning–based model trained on a large-scale textile image dataset to accurately detect and classify multiple fabric defects such as stains, holes, and weaving faults. Integrated the model with a web interface and PostgreSQL database for defect visualization, result storage, and inspection management. Role: Full Stack Developer',
+      title: 'FabSpector – AI-Based Fabric Defect Inspection System',
+      description: 'Developed a DL model with accurately detect and classify fabric defects. Integrated with a web interface and PostgreSQL database.',
       tech: ['Computer Vision', 'HTML', 'CSS', 'PostgreSQL'],
       category: 'AI / Computer Vision',
-      date: 'Aug 2024 - Oct 2024',
+      date: 'Nov 2025 - Dec 2025',
       link: 'https://github.com/sanjayn29/SiH-Fabric-Defect-Detector',
       image: FabspectorImg,
     },
   ];
+
+  const parseEndTimestamp = (dateStr) => {
+    const now = new Date().getTime();
+    let endPart = dateStr.split(' - ')[1];
+    if (endPart === 'Present') {
+      return now;
+    }
+    endPart = endPart.replace('Sept', 'Sep');
+    const parts = endPart.split(' ');
+    const month = parts[0];
+    const year = parts[1];
+    // Assume end of month for sorting
+    const dateObj = new Date(`${year} ${month} 31`);
+    return dateObj.getTime();
+  };
+
+  const sortedProjects = [...projects].sort((a, b) => parseEndTimestamp(b.date) - parseEndTimestamp(a.date));
 
   return (
     <section id="projects" ref={sectionRef} className="relative py-24 md:py-32">
@@ -102,7 +119,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {projects.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <div
               key={index}
               className="group glass-card transition-all duration-700 hover-glow-cyan"
