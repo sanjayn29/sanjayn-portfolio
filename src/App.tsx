@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SanjayN from "./pages/sanjayn";
 import NotFound from "./pages/NotFound";
 import { ScrollButtons } from "./components/ScrollButtons";
+import SocialSidebar from "./components/sanjayn/SocialSidebar";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SocialSidebar />
         <Routes>
           <Route path="/" element={<SanjayN />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
