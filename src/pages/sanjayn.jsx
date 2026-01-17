@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/sanjayn/navbar';
 import Hero from '../components/sanjayn/hero';
 import About from '../components/sanjayn/about';
@@ -13,7 +14,15 @@ import StarCursor from '../components/sanjayn/StarCursor';
 
 const SanjayN = () => {
   return (
-    <div className="min-h-screen bg-space-deep relative">
+    <>
+      <Helmet>
+        <title>Sanjay N</title>
+        <meta
+          name="description"
+          content="Sanjay N – Full Stack Developer, AI Engineer & Freelancer. Explore my projects, skills, achievements, and professional journey."
+        />
+      </Helmet>
+      <div className="min-h-screen bg-space-deep relative">
       <StarCursor />
       <SpaceBackground />
       <Navbar />
@@ -29,6 +38,7 @@ const SanjayN = () => {
       </main>
       <Footer />
     </div>
+    </>
   );
 };
 

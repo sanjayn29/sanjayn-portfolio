@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -166,6 +167,14 @@ const Contact = () => {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>Sanjay N | Freelancer</title>
+        <meta
+          name="description"
+          content="Get in touch with Sanjay N for collaboration, freelance projects, or inquiries. Connect via email, LinkedIn, or the contact form."
+        />
+      </Helmet>
     <section id="contact" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
        {/* Section Header */}
@@ -324,6 +333,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 // Image imports (path: src/assert/)
 import KongutbiImg from '../../assert/Kongutbi.png';
@@ -104,6 +105,14 @@ const Projects = () => {
   const sortedProjects = [...projects].sort((a, b) => parseEndTimestamp(b.date) - parseEndTimestamp(a.date));
 
   return (
+    <>
+      <Helmet>
+        <title>Projects Portfolio | Sanjay N</title>
+        <meta
+          name="description"
+          content="View Sanjay N's featured projects including AI-powered applications, web development, and innovative solutions in FinTech and AgriTech."
+        />
+      </Helmet>
     <section id="projects" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -202,6 +211,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

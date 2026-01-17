@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import nvidiaImg from '../../assert/nvidia.png';
 import aiFoundationImg from '../../assert/AI-Foundation.png';
 import aiGenerativeImg from '../../assert/AI-Generative.png';
@@ -55,6 +56,14 @@ const Certifications = () => {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>Professional Certifications | Sanjay N</title>
+        <meta
+          name="description"
+          content="View Sanjay N's professional certifications from NVIDIA, Oracle, and other institutions in AI, Generative AI, and Machine Learning technologies."
+        />
+      </Helmet>
     <section id="certifications" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -111,6 +120,7 @@ const Certifications = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

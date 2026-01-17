@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import SanjayImage from '../../assert/SanjayN2.jpg';
 import { FaPhone } from 'react-icons/fa';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
@@ -26,6 +27,14 @@ const About = () => {
   }, []);
 
   return (
+    <>
+      <Helmet>
+        <title>About Sanjay N | Full Stack Developer & AI Engineer</title>
+        <meta
+          name="description"
+          content="Learn about Sanjay N, a Full Stack Developer and AI Engineer passionate about building intelligent solutions and modern web applications."
+        />
+      </Helmet>
     <section id="about" ref={sectionRef} className="relative pt-20 md:pt-24 pb-12 md:pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-5">
         {/* Section Header */}
@@ -142,6 +151,7 @@ Currently pursuing B.Tech in Artificial Intelligence & Machine Learning at Kongu
         </div>
       </div>
     </section>
+    </>
   );
 };
 

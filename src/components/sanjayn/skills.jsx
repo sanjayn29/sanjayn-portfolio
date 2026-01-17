@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Code, Cpu, Database, Smartphone, Zap, GitBranch, CheckCircle } from 'lucide-react';
 
 const Skills = () => {
@@ -91,6 +92,14 @@ const Skills = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Skills & Technologies | Sanjay N</title>
+        <meta
+          name="description"
+          content="Explore Sanjay N's technical skills in Full Stack Development, AI/ML, databases, and modern technologies like React, Python, Java, and more."
+        />
+      </Helmet>
     <section id="skills" ref={sectionRef} className="relative py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         {/* Section Header */}
@@ -187,6 +196,7 @@ const Skills = () => {
         }
       `}</style>
     </section>
+    </>
   );
 };
 

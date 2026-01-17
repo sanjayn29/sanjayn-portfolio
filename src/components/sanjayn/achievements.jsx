@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 // Image imports (path: src/assert/)
 import April2024Img from '../../assert/RRC.jpg';
@@ -111,6 +112,14 @@ const Achievements = () => {
   });
 
   return (
+    <>
+      <Helmet>
+        <title>Achievements & Awards | Sanjay N</title>
+        <meta
+          name="description"
+          content="View Sanjay N's achievements including hackathon wins, coding competition prizes, and recognition in AI, software development, and innovation."
+        />
+      </Helmet>
     <section id="achievements" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
        {/* Section Header */}
@@ -201,6 +210,7 @@ const Achievements = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

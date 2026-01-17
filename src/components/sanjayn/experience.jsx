@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Experience = () => {
   const sectionRef = useRef(null);
@@ -50,6 +51,14 @@ const Experience = () => {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>Professional Experience | Sanjay N</title>
+        <meta
+          name="description"
+          content="Discover Sanjay N's professional experience as a Full Stack Developer and AI Engineer with freelance and internship roles in software development."
+        />
+      </Helmet>
     <section id="experience" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -121,6 +130,7 @@ const Experience = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

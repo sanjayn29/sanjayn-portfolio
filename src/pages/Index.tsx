@@ -1,13 +1,23 @@
 // Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
+    <>
+      <Helmet>
+        <title>Sanjay N | Full Stack Developer & AI Engineer</title>
+        <meta
+          name="description"
+          content="Welcome to Sanjay N's portfolio. Full Stack Developer, AI Engineer & Freelancer showcasing projects, skills, and achievements."
+        />
+      </Helmet>
+      <div className="flex min-h-screen items-center justify-center bg-background">
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
         <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
       </div>
     </div>
+    </>
   );
 };
 
