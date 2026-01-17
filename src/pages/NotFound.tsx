@@ -17,6 +17,10 @@ const NotFound = () => {
           name="description"
           content="The page you are looking for does not exist. Return to Sanjay N's portfolio to explore projects, skills, and achievements."
         />
+        <meta property="og:title" content="404 - Page Not Found | Sanjay N" />
+        <meta property="og:description" content="The page you are looking for does not exist. Return to Sanjay N's portfolio." />
+        <meta property="og:url" content="https://sanjayn.me/" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-muted">
       <div className="text-center">

@@ -112,6 +112,10 @@ const Projects = () => {
           name="description"
           content="View Sanjay N's featured projects including AI-powered applications, web development, and innovative solutions in FinTech and AgriTech."
         />
+        <meta property="og:title" content="Projects Portfolio | Sanjay N" />
+        <meta property="og:description" content="View Sanjay N's featured projects including AI-powered applications, web development, and innovative solutions in FinTech and AgriTech." />
+        <meta property="og:url" content="https://sanjayn.me/#projects" />
+        <meta property="og:type" content="website" />
       </Helmet>
     <section id="projects" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

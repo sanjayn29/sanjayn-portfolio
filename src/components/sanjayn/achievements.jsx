@@ -119,6 +119,10 @@ const Achievements = () => {
           name="description"
           content="View Sanjay N's achievements including hackathon wins, coding competition prizes, and recognition in AI, software development, and innovation."
         />
+        <meta property="og:title" content="Achievements & Awards | Sanjay N" />
+        <meta property="og:description" content="View Sanjay N's achievements including hackathon wins, coding competition prizes, and recognition in AI, software development, and innovation." />
+        <meta property="og:url" content="https://sanjayn.me/#achievements" />
+        <meta property="og:type" content="website" />
       </Helmet>
     <section id="achievements" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

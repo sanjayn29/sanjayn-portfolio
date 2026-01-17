@@ -58,6 +58,10 @@ const Experience = () => {
           name="description"
           content="Discover Sanjay N's professional experience as a Full Stack Developer and AI Engineer with freelance and internship roles in software development."
         />
+        <meta property="og:title" content="Professional Experience | Sanjay N" />
+        <meta property="og:description" content="Discover Sanjay N's professional experience as a Full Stack Developer and AI Engineer with freelance and internship roles in software development." />
+        <meta property="og:url" content="https://sanjayn.me/#experience" />
+        <meta property="og:type" content="website" />
       </Helmet>
     <section id="experience" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

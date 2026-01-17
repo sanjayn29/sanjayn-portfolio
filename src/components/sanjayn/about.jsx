@@ -34,6 +34,10 @@ const About = () => {
           name="description"
           content="Learn about Sanjay N, a Full Stack Developer and AI Engineer passionate about building intelligent solutions and modern web applications."
         />
+        <meta property="og:title" content="About Sanjay N | Full Stack Developer & AI Engineer" />
+        <meta property="og:description" content="Learn about Sanjay N, a Full Stack Developer and AI Engineer passionate about building intelligent solutions and modern web applications." />
+        <meta property="og:url" content="https://sanjayn.me/#about" />
+        <meta property="og:type" content="profile" />
       </Helmet>
     <section id="about" ref={sectionRef} className="relative pt-20 md:pt-24 pb-12 md:pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-5">
@@ -58,7 +62,7 @@ const About = () => {
               <div className="relative overflow-hidden rounded-xl border-3 border-glow-cyan/20 shadow-xl">
                 <img
                   src={SanjayImage}
-                  alt="Sanjay N"
+                  alt="Sanjay N - Full Stack Developer, AI Engineer, and Freelancer"
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
               </div>

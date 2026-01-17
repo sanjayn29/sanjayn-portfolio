@@ -99,6 +99,10 @@ const Skills = () => {
           name="description"
           content="Explore Sanjay N's technical skills in Full Stack Development, AI/ML, databases, and modern technologies like React, Python, Java, and more."
         />
+        <meta property="og:title" content="Skills & Technologies | Sanjay N" />
+        <meta property="og:description" content="Explore Sanjay N's technical skills in Full Stack Development, AI/ML, databases, and modern technologies like React, Python, Java, and more." />
+        <meta property="og:url" content="https://sanjayn.me/#skills" />
+        <meta property="og:type" content="website" />
       </Helmet>
     <section id="skills" ref={sectionRef} className="relative py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">

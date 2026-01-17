@@ -10,6 +10,11 @@ const Index = () => {
           name="description"
           content="Welcome to Sanjay N's portfolio. Full Stack Developer, AI Engineer & Freelancer showcasing projects, skills, and achievements."
         />
+        <meta property="og:title" content="Sanjay N | Full Stack Developer & AI Engineer" />
+        <meta property="og:description" content="Welcome to Sanjay N's portfolio. Full Stack Developer, AI Engineer & Freelancer showcasing projects, skills, and achievements." />
+        <meta property="og:image" content="https://sanjayn.me/preview.png" />
+        <meta property="og:url" content="https://sanjayn.me/" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-background">
       <div className="text-center">

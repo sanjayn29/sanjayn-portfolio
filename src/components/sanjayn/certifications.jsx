@@ -63,6 +63,10 @@ const Certifications = () => {
           name="description"
           content="View Sanjay N's professional certifications from NVIDIA, Oracle, and other institutions in AI, Generative AI, and Machine Learning technologies."
         />
+        <meta property="og:title" content="Professional Certifications | Sanjay N" />
+        <meta property="og:description" content="View Sanjay N's professional certifications from NVIDIA, Oracle, and other institutions in AI, Generative AI, and Machine Learning technologies." />
+        <meta property="og:url" content="https://sanjayn.me/#certifications" />
+        <meta property="og:type" content="website" />
       </Helmet>
     <section id="certifications" ref={sectionRef} className="relative py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

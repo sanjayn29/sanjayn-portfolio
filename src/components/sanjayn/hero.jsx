@@ -183,7 +183,7 @@ const Hero = () => {
                   <div className="w-52 h-52 sm:w-56 sm:h-56 bg-blue-900/95 rounded-2xl flex items-center justify-center shadow-inner max-w-full max-h-full">
                     <img 
                       src={SanjayImage}
-                      alt="Sanjay N" 
+                      alt="Sanjay N - Full Stack Developer and AI Engineer" 
                       className="w-48 h-48 sm:w-52 sm:h-52 object-cover rounded-lg animate-float max-w-full max-h-full" 
                     />
                   </div>

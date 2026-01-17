@@ -21,6 +21,15 @@ const SanjayN = () => {
           name="description"
           content="Sanjay N – Full Stack Developer, AI Engineer & Freelancer. Explore my projects, skills, achievements, and professional journey."
         />
+        <meta property="og:title" content="Sanjay N | Full Stack Developer, AI Engineer & Freelancer" />
+        <meta property="og:description" content="Portfolio of Sanjay N – Full Stack Developer, AI Engineer & Freelancer. Explore projects, skills, achievements, and professional journey." />
+        <meta property="og:image" content="https://sanjayn.me/preview.png" />
+        <meta property="og:url" content="https://sanjayn.me/" />
+        <meta property="og:type" content="profile" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sanjay N | Full Stack Developer, AI Engineer & Freelancer" />
+        <meta name="twitter:description" content="Portfolio of Sanjay N – Full Stack Developer, AI Engineer & Freelancer." />
+        <meta name="twitter:image" content="https://sanjayn.me/preview.png" />
       </Helmet>
       <div className="min-h-screen bg-space-deep relative">
       <StarCursor />
