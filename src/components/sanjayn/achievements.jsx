@@ -163,6 +163,7 @@ const Achievements = () => {
                           src={achievement.image}
                           alt={`${achievement.title} proof`}
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
                         />
                       ) : (
                         <div className="w-full h-full bg-gray-800 flex items-center justify-center">

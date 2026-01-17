@@ -64,6 +64,7 @@ const About = () => {
                   src={SanjayImage}
                   alt="Sanjay N - Full Stack Developer, AI Engineer, and Freelancer"
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
               

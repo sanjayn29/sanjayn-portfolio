@@ -95,6 +95,7 @@ const Certifications = () => {
                   src={cert.image}
                   alt={`${cert.title} badge`}
                   className="w-full h-full object-contain"
+                  loading="lazy"
                 />
               </div>
 

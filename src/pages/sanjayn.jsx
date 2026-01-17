@@ -1,16 +1,19 @@
 import { Helmet } from 'react-helmet-async';
+import { lazy, Suspense } from 'react';
 import Navbar from '../components/sanjayn/navbar';
 import Hero from '../components/sanjayn/hero';
-import About from '../components/sanjayn/about';
-import Skills from '../components/sanjayn/skills';
-import Experience from '../components/sanjayn/experience';
-import Projects from '../components/sanjayn/projects';
-import Achievements from '../components/sanjayn/achievements';
-import Certifications from '../components/sanjayn/certifications';
-import Contact from '../components/sanjayn/contact';
-import Footer from '../components/sanjayn/footer';
 import SpaceBackground from '../components/sanjayn/SpaceBackground';
 import StarCursor from '../components/sanjayn/StarCursor';
+
+// Lazy load heavy components
+const About = lazy(() => import('../components/sanjayn/about'));
+const Skills = lazy(() => import('../components/sanjayn/skills'));
+const Experience = lazy(() => import('../components/sanjayn/experience'));
+const Projects = lazy(() => import('../components/sanjayn/projects'));
+const Achievements = lazy(() => import('../components/sanjayn/achievements'));
+const Certifications = lazy(() => import('../components/sanjayn/certifications'));
+const Contact = lazy(() => import('../components/sanjayn/contact'));
+const Footer = lazy(() => import('../components/sanjayn/footer'));
 
 const SanjayN = () => {
   return (
@@ -37,15 +40,19 @@ const SanjayN = () => {
       <Navbar />
       <main className="relative z-10">
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Achievements />
-        <Certifications />
-        <Contact />
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-silver-primary">Loading...</div></div>}>
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Achievements />
+          <Certifications />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
     </>
   );
