@@ -5,7 +5,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/sanjayn-portfolio/", // GitHub Pages URL (repo name)
+  base: "/", // ✅ MUST be "/" for sanjayn.me
   server: {
     host: "::",
     port: 8080,
