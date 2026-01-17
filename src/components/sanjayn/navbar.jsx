@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import resumePDF from '../../assert/23ALR087-Sanjay N.pdf'; // Import the PDF for download
+import resumePDF from '../../assert/Sanjay N.pdf'; // Import the PDF for download
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -20,7 +20,7 @@ const Navbar = () => {
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = resumePDF;
-    link.download = '23ALR087-Sanjay N.pdf';
+    link.download = 'Sanjay N.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
